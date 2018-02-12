@@ -1,0 +1,28 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+#main {
+  min-width: 800px;
+  margin: 0px 200px 20px 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: $main-background-color;
+  @include border-radius(0, 0, 5px, 5px);
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.error {
+  color: mix(red, $text-color, 40);
+}
+
+.success {
+  color: mix(green, $text-color, 40);
+}

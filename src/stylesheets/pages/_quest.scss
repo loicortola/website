@@ -1,0 +1,147 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+.markdown {
+  text-align: left;
+  background-color: #1d1f21;
+  color: #c5c8c6;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 5px 20px;
+}
+
+#mission_editor {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#console_output {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  //color: $text-error-color;
+}
+
+.ace_tag {
+  display: none;
+}
+
+// Override error text
+.ace_text.ace_invalid {
+  font-weight: bold;
+  background-color: transparent !important;
+  color: $text-error-color !important;  
+
+}
+
+.success {
+ color: $text-success-color; 
+}
+
+
+.mission_documentation {
+  width: 100%;
+
+  .error_banner {
+    padding: 15px 20px;
+    background-image: linear-gradient(rgba(183, 87, 87, 0.6), rgba(153, 35, 35, 0.65));
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #a47878;
+  }
+
+  nav {
+    width: 100%;
+
+    .tab {
+      display: inline-block;
+      padding: 5px 10px;
+      color: #e5a154;
+      font-weight: bold;
+
+      &:hover:not(.disabled), &.selected {
+        background: #1d1f21;
+        border-top: 3px solid #e5a154;
+        color: white;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+      }
+
+      &.disabled {
+        display: none;
+      }
+
+      &:hover:not(.selected):not(.disabled) {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .description {
+    margin-top: 0;
+  }
+}
+
+
+.feedback {
+  .rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+
+    h2 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .stars {
+      font-size: 30px;
+      line-height: 26px;
+    }
+
+    .rating-explanation {
+      color: grey;
+      font-style: italic;
+      height: 12px;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    background: #f2f2f2;
+    padding: 10px;
+    margin-top: 5px;
+
+    &.placeholder {
+      color: grey;
+      font-style: italic;
+    }
+  }
+}
+
+.mission_navigation {
+  margin-top: 5px;
+  select {
+    margin-left: 10px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .mission_success {
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 5px 20px;
+    background-color: #457d40;
+    color: #e6e6e6;
+    border-radius: 2px;
+
+    .hidden {
+      display: none;
+    }
+  }
+}

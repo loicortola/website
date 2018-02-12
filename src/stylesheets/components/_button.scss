@@ -1,0 +1,104 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+/// Button group
+/// Defines the style of a button-group
+.button-group {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* IE hacks */
+  zoom: 1;
+  *display: inline;
+}
+
+/// This defines the style of the first button inside a button-group
+.button-group > .button:first-child,
+.button-group li:first-child .button {
+  margin-left: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/// This defines the style of the last button inside a button-group
+.button-group > .button:last-child,
+.button-group li:last-child > .button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/// This defines the style of every middle-range button within a button-group
+.button-group > .button:not(:first-child):not(:last-child),
+.button-group li:not(:first-child):not(:last-child) .button {
+  border-radius: 0;
+}
+
+.button {
+  position: relative;
+  overflow: visible;
+  display: inline-block;
+  margin: 0;
+  padding: 0.5em 1em;
+  border: 1px solid darken($button-background-color, 10);
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 1px 1px 0 #fff;
+  font:0.9em/normal sans-serif;
+  font-weight: bold;
+  color: $button-text-color;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  background-color: $button-background-color;
+  @include linear-gradient($button-background-color, -10);
+  
+  -moz-background-clip: padding; /* for Firefox 3.6 */
+  background-clip: padding-box;
+  border-radius: 0.2em;
+  /* IE hacks */
+  zoom: 1;
+  *display: inline;
+
+  &:hover {
+    border-color: darken($button-hover-color, 10);
+    border-bottom-color: lighten($button-active-color, 10);
+    text-decoration: none;
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+    color: #fff;
+    background-color: $button-hover-color;
+    @include linear-gradient($button-hover-color, 10);
+  }
+
+  &:active,
+  &.active {
+    border-color: darken($button-active-color, 10);
+    border-bottom-color: lighten($button-active-color, 10);
+    background-color: $button-active-color;
+    @include linear-gradient($button-active-color, 20);
+  }
+
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+  
+  // Primary button
+  &.primary {
+    background-color: $primary-color;
+  }
+  
+  // Round button
+  &.round {
+    border-radius: 5px;
+  }
+
+  // Pill button
+  &.pill {
+    border-radius: 50em;
+  }
+}
+
+
+

@@ -1,0 +1,11 @@
+node_modules
+.idea
+*.iml
+.DS_Store
+tmp
+db
+target
+dist
+npm-debug.log
+i18n/*
+*.lock
