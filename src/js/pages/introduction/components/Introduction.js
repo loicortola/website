@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {FormattedMessage, defineMessages, injectIntl} from 'react-intl';
 
 const messages = defineMessages({
@@ -34,7 +35,7 @@ class Introduction extends Component {
 
 // TypeChecking for properties
 Introduction.propTypes = {
-  data: React.PropTypes.object
+  data: PropTypes.object
 };
 
 export default injectIntl(Introduction);

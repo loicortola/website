@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {NavLink} from 'react-router';
 import Introduction from '../components/Introduction';
 import {connect} from 'react-redux';
@@ -27,10 +28,6 @@ class IntroductionPage extends Component {
     )
   }
 }
-
-AdventureDashboardPage.contextTypes = {
-  router: React.PropTypes.object
-};
 
 const mapStateToProps = (state, ownProps) => ({
   profile: state.profile

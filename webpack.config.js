@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const path = require('path');
 // Env variables
-const env = process.env.NODE_ENV === 'production' ? 'production' : 'dev';
+const env = process.env.NODE_ENV === 'production' ? 'production' : 'devd';
 const port = process.env.PORT || 3000;
 
 const resolve = { alias: {
@@ -25,8 +25,7 @@ if (env === 'production') {
 }
 
 const extractSass = new ExtractTextPlugin({
-    filename: "[name].[contenthash].css",
-    disable: env === "dev"
+  filename: "[name].[contenthash].css"
 });
 
 
@@ -37,7 +36,7 @@ module.exports = {
   },
   entry: {
     // Vendor content
-    vendor: ['lodash', 'react', 'react-dom', 'react-intl', 'react-router', 'redux', 'react-redux', 'react-router-redux', 'redux-thunk', 'react-intl-redux', 'redux-form', 'normalizr', 'superagent', 'lodash.merge', 'lodash.isplainobject', 'reselect'],
+    vendor: ['axios', 'lodash', 'lodash.merge', 'lodash.isplainobject', 'normalizr', 'react', 'react-dom', 'react-intl', 'react-router', 'redux', 'react-redux', 'redux-thunk', 'react-intl-redux'],
     // Source entry point
     bundle: ['./src/js/index.js']
   },
@@ -52,48 +51,54 @@ module.exports = {
   },
   devtool: "source-map", // any "source-map"-like devtool is possible
   module: {
-        rules: [
-          // JS Files to translate with babel
+    rules: [
+      // JS Files to translate with babel
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
       },
-          // SASS files
-          {
-            test: /\.scss$/,
-            use: extractSass.extract({
-                use: [{
-                    loader: "css-loader",
-                    options: {
-              modules: true,
-              camelCase: true,
-              sourceMap: true
+      // SASS files
+      {
+        test: /\.scss$/,
+        use: extractSass.extract({
+          // use style-loader in development
+          fallback: "style-loader",
+          use: [
+            {
+              loader: "css-loader",
+              options: {
+                modules: true,
+                camelCase: true,
+                sourceMap: true
+              }
+            }, {
+              loader: "sass-loader"
             }
-                }, {
-                    loader: "sass-loader"
-                }],
-                // use style-loader in development
-                fallback: "style-loader"
-            })
+          ]
+          })
         },
         // Images
         {
-           test: /\.(png|svg|jpg|gif)$/,
-           use: [
-             'file-loader'
-           ]
-         },
-         // Fonts
-         {
-           test: /\.(woff|woff2|eot|ttf|otf)$/,
-           use: [
-             'file-loader'
-           ]
-         }
-       ]
+          test: /\.(png|svg|jpg|gif)$/,
+          use: [
+            'file-loader'
+          ]
+        },
+        // Fonts
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/,
+          use: [
+            'file-loader'
+          ]
+        }
+      ]
     },
-  plugins: [
-    extractSass
-  ]
-};
+    plugins: [
+      extractSass,
+      new HtmlWebpackPlugin({
+        template: 'src/public/index.html',
+        favicon: 'src/public/favicon.ico'
+      })
+    ]
+  };

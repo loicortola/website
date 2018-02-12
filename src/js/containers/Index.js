@@ -1,16 +1,19 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 import '../../stylesheets/main.scss';
 import {loadProfile} from '../pages/introduction/actions';
 
+
 class Index extends Component {
+
   constructor(props) {
     super(props);
-    this.state = {ready: false};
   }
 
   componentWillMount() {
     // NO-OP
+    console.log('Ok');
   }
 
   loadProfile() {
@@ -19,16 +22,17 @@ class Index extends Component {
   }
 
   render() {
-    <div>
+    return (
+      <div>
       <header id='header'>
         Header
       </header>
       <div id='main'>
-        <nav><Menu active='dashboard'/></nav>
-        <main>{this.props.children}</main>
+        Wait
       </div>
       <footer id='footer'>Copyright © 2018 From Resourcepool with Love.</footer>
     </div>
+    )
   }
 }
 
