@@ -5,7 +5,7 @@ import {Redirect, Switch, Route, BrowserRouter as Router} from 'react-router-dom
 
 // Page Components
 import Index from '../containers/Index';
-import introduction from '../pages/introduction';
+import aboutme from '../pages/aboutme';
 
 const Root = ({store}) => (
     <Provider store={store}>
@@ -13,8 +13,8 @@ const Root = ({store}) => (
         <IntlProvider>
           <div>
             <Switch>
-              <Redirect path="*" to="/introduction" />
-              <Route path="/introduction" component={introduction.components.IntroductionPage} />
+              <Redirect path="*" to="/aboutme" />
+              <Route path="/aboutme" component={aboutme.components.AboutMePage} />
             </Switch>
           </div>
         </IntlProvider>

@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
 import {FormattedMessage, defineMessages, injectIntl} from 'react-intl';
+
 
 const messages = defineMessages({
   lblWelcome: {
@@ -13,7 +16,7 @@ const messages = defineMessages({
   }
 });
 
-class Introduction extends Component {
+class AboutMe extends Component {
   constructor(props) {
     super(props);
   }
@@ -27,15 +30,15 @@ class Introduction extends Component {
           <div id='introduction'>
             <FormattedMessage {...messages.lblIntroduction}/>
           </div>
-          <div>{this.props.data}</div>
+          <ReactMarkdown source={this.props.text}/>
         </div>
       );
   }
 }
 
 // TypeChecking for properties
-Introduction.propTypes = {
-  data: PropTypes.object
+AboutMe.propTypes = {
+  text: PropTypes.string
 };
 
-export default injectIntl(Introduction);
+export default injectIntl(AboutMe);

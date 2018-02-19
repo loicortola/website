@@ -1,36 +1,15 @@
-
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
 
 const webpack = require('webpack');
-
 const path = require('path');
-// Env variables
-const env = process.env.NODE_ENV === 'production' ? 'production' : 'devd';
-const port = process.env.PORT || 3000;
 
 const sourcePath = path.join(__dirname, 'src');
 const staticSourcePath = path.join(__dirname, 'static');
-
-if (env === 'production') {
-  // Change vendors for mins
-  // resolve = {
-  //   alias: {
-  //     react: 'react/dist/react.min.js',
-  //     normalizr: 'normalizr/dist/normalizr.min.js',
-  //     'react-dom': 'react-dom/dist/react-dom.min.js',
-  //     redux: 'redux/dist/redux.min.js',
-  //     'redux-form': 'redux-form/dist/redux-form.min.js'
-  //   }
-  // };
-}
+const distPath = path.join(__dirname, 'dist');
 
 module.exports = {
-  devServer: {
-    port: 3000,
-    historyApiFallback: true
-  },
   entry: {
     app: path.resolve(sourcePath, path.join('js','index.js'))
   },
@@ -41,7 +20,7 @@ module.exports = {
   },
   // External config (will not be bundled)
   externals: {
-    [path.resolve(sourcePath, path.join('conf','conf'))]: 'Config'
+    [path.resolve(sourcePath, path.join('conf','conf.js'))]: 'Config'
   },
   devtool: "source-map", // any "source-map"-like devtool is possible
   module: {
@@ -67,7 +46,8 @@ module.exports = {
       },
       {
         test: /\.(eot?.+|svg?.+|ttf?.+|otf?.+|woff?.+|woff2?.+)$/,
-        use: 'file-loader?name=assets/[name]-[hash].[ext]'
+        use: 'file-loader?name=assets/[name]-[hash].[ext]',
+        include: staticSourcePath
       },
       {
         test: /\.(png|gif|jpg|svg)$/,
@@ -81,6 +61,11 @@ module.exports = {
   plugins: [
     // Scope Hoisting
     new webpack.optimize.ModuleConcatenationPlugin(),
+    new CopyWebpackPlugin(
+        [
+          { from: path.join(staticSourcePath, 'images'), to: path.join(distPath, 'images')}
+        ]
+    ),
     // Separate vendor content from our js code
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
@@ -89,45 +74,14 @@ module.exports = {
         return module.context && module.context.indexOf('node_modules') >= 0;
       }
     }),
-    // Uglify
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        screw_ie8: true,
-        conditionals: true,
-        unused: true,
-        comparisons: true,
-        sequences: true,
-        dead_code: true,
-        evaluate: true,
-        if_return: true,
-        join_vars: true
-      },
-      output: {
-        comments: false
-      }
-    }),
-    // Hashed module ids instead of names. Prod only
-    new webpack.HashedModuleIdsPlugin(),
     // Extract SASS files into CSS file
     new ExtractTextPlugin({
       filename: "[name].[chunkhash].css"
-    }),
-    // Minify CSS
-    new StyleExtHtmlWebpackPlugin({
-      minify: true
     }),
     // Copy html files and resources to destination, minify
     new HtmlWebpackPlugin({
       template: path.resolve(staticSourcePath, 'index.html'),
       favicon: path.resolve(staticSourcePath, 'favicon.ico'),
-      minify: {
-        collapseWhitespace: true,
-        collapseInlineTagWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true
-      }
-    }),
-
+    })
   ]
 };

@@ -1,7 +1,0 @@
-{
-  "realm": "Deadlock",
-  "auth-server-url": "https://auth.dev.deadlock.io/auth",
-  "ssl-required": "all",
-  "resource": "deadlock-www",
-  "public-client": true
-}

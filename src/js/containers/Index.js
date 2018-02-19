@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import {HeaderPartial} from '../partials/header/containers/index';
 import {connect} from 'react-redux';
 import '../../stylesheets/main.scss';
-import {loadProfile} from '../pages/introduction/actions';
 
 
 class Index extends Component {
@@ -10,25 +9,13 @@ class Index extends Component {
   constructor(props) {
     super(props);
   }
-
-  componentWillMount() {
-    // NO-OP
-    console.log('Ok');
-  }
-
-  loadProfile() {
-    console.log('Not Loaded. Will load profile');
-    this.props.loadProfile();
-  }
-
+  
   render() {
     return (
       <div>
-      <header id='header'>
-        Header
-      </header>
+      <HeaderPartial/>
       <div id='main'>
-        Wait
+        {this.props.children}
       </div>
       <footer id='footer'>Copyright © 2018 From Resourcepool with Love.</footer>
     </div>
@@ -42,4 +29,4 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps, {loadProfile})(Index)
+export default connect(mapStateToProps)(Index)

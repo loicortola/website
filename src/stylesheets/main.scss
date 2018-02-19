@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+@charset "UTF-8";
 
 // 1. Configuration and helpers
 @import
@@ -22,24 +22,6 @@
   'layout/header',
   'layout/footer',
   'layout/main';
-
-// 5. Components
-@import
-  'components/input',
-  'components/button',
-  'components/radar',
-  'components/spinner',
-  'components/modal',
-  'components/badge';
-
-// 6. Page-specific styles
-@import
-  'pages/dashboard',  
-  'pages/home',
-  'pages/quest',
-  'pages/login',
-  'pages/register',
-  'pages/story';
 
 // 7. Themes
 @import

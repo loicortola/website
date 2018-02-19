@@ -14,19 +14,19 @@ $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvet
 /// @type List
 $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
 
+$primary-color: #0277bd !default;
+$primary-dark-color: #004c8c !default;
+$primary-light-color: #58a5f0 !default;
 
+$secondary-color: #ffd180 !default;
+$secondary-dark-color: #caa052 !default;
+$secondary-light-color: #ffffb1 !default;
 
+$text-size-xl: 1.8em;
+$text-size-l: 1.5em;
+$text-size-md: 1.3em;
+$text-size-sm: 1.1em;
 
-/// Background color
-$background-color: rgb(61, 80, 110) !default;
-$menu-background-color: darken($background-color, 20) !default;
-$main-background-color: darken($background-color, 10) !default;
-
-/// Button colors
-$button-background-color: #ececec;
-$button-text-color: #333;
-$button-hover-color: #3c8dde;
-$button-active-color: #3072b3;
 /// Copy text color
 /// @type Color
 $text-color: rgb(244, 244, 244) !default;

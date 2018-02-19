@@ -2,7 +2,7 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 #header {
-  background-color: $menu-background-color;
+  background-color: $primary-dark-color;
   height: 70px;
 }
 
@@ -29,7 +29,7 @@
 
 #menu-settings-wrapper {
   display: flex;
-  background-color: $menu-background-color;
+  background-color: $primary-dark-color;
   width: 90px;
   padding: 20px;
   flex-direction: column;  /* make main axis vertical */

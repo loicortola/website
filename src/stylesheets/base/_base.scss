@@ -7,7 +7,7 @@
  */
 html {
   box-sizing: border-box;
-  background-color: $background-color;
+  background-color: $primary-color;
   font-size: 0.7em;
 }
 
@@ -25,11 +25,11 @@ html {
  * Basic styles for links
  */
 a {
-  color: $primary-color;
+  color: $white;
   text-decoration: none;
 
   @include on-event {
-    color: $text-color;
+    color: $white;
     text-decoration: underline;
   }
 }

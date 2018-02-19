@@ -47,7 +47,7 @@ export default store => next => action => {
 
   const actionWith = actionType => {
     // Copy action type and all parent action metadata into finalAction
-    const finalAction = Object.assign({}, action, data);
+    const finalAction = Object.assign({}, action, actionType);
     // Remove original CALL_API
     delete finalAction[CALL_API];
     return finalAction;

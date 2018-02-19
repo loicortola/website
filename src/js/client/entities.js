@@ -2,7 +2,7 @@ import {schema, normalize} from 'normalizr';
 
 const metadataEntity = new schema.Entity('metadata');
 
-const introductionEntity = new schema.Entity('introduction');
+const aboutMeEntity = new schema.Entity('aboutme');
 
 const workEntity = new schema.Entity('work');
 
@@ -18,7 +18,7 @@ const projectEntity = new schema.Entity('project');
 
 const profileEntity = new schema.Entity('profile', {
   metadata: metadataEntity,
-  introduction: introductionEntity,
+  aboutMe: aboutMeEntity,
   education: [ educationEntity ],
   work: [ workEntity ],
   projects: [ projectEntity ],

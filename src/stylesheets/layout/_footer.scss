@@ -6,6 +6,6 @@
   padding: 20px;
   display: flex;
   text-align: center;
-  background-color: $main-background-color;
+  background-color: $primary-dark-color;
   @include border-radius(5px, 5px, 0, 0);
 }

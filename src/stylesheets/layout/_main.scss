@@ -7,7 +7,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  background-color: $main-background-color;
+  background-color: $primary-color;
   @include border-radius(0, 0, 5px, 5px);
 }
 
@@ -17,12 +17,4 @@
 
 .left {
   text-align: left;
-}
-
-.error {
-  color: mix(red, $text-color, 40);
-}
-
-.success {
-  color: mix(green, $text-color, 40);
 }
