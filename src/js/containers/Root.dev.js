@@ -28,12 +28,22 @@ const theme = createMuiTheme({
 class Root extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      redirect: false
+    };
   }
 
   componentWillMount() {
     // NO-OP
   }
+  
+  componentWillUpdate() {
+    console.log('ok');
+    this.setState({redirect: true});
+  }
 
+  
+  
   render() {
     return (
         <Provider store={this.props.store}>
@@ -42,10 +52,10 @@ class Root extends Component {
               <IntlProvider>
                 <Index>
                   <Switch>
+                    <Route exact path="/" component={aboutme.components.AboutMePage}/>
                     <Route path="/aboutme" component={aboutme.components.AboutMePage}/>
-                    <Redirect to="/aboutme"/>
                   </Switch>
-                  <DevTools/>
+                  
                 </Index>
               </IntlProvider>
             </MuiThemeProvider>

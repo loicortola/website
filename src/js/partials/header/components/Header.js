@@ -1,15 +1,11 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 import './Header.scss';
 import PropTypes from 'prop-types';
-import ReactMarkdown from 'react-markdown';
 import {FormattedMessage, defineMessages, injectIntl} from 'react-intl';
 import { Link } from 'react-router-dom';
-import AppBar from 'material-ui/AppBar';
 import Avatar from 'material-ui/Avatar';
 import IconButton from 'material-ui/IconButton';
 import Drawer from 'material-ui/Drawer';
-import './Header.scss';
 
 
 const messages = defineMessages({

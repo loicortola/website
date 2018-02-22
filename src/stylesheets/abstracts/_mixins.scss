@@ -66,6 +66,13 @@
   border-radius: $size;
 }
 
+@mixin border-radius-important($size : 5px) {
+  -webkit-border-radius: $size !important;
+  -moz-border-radius: $size !important;
+  border-radius: $size !important;
+}
+
+
 @mixin border-radius($top-left: 5px, $top-right: 5px, $bottom-right: 5px, $bottom-left: 5px) {
   -webkit-border-top-left-radius: $top-left;
   -webkit-border-top-right-radius: $top-right;

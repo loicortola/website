@@ -4,6 +4,7 @@
 @import
   'abstracts/variables',
   'abstracts/functions',
+  'abstracts/media',
   'abstracts/mixins';
 
 // 2. Vendors
@@ -19,10 +20,4 @@
 
 // 4. Layout-related sections
 @import
-  'layout/header',
-  'layout/footer',
   'layout/main';
-
-// 7. Themes
-@import
-  'themes/default';

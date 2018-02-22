@@ -6,6 +6,8 @@ import {connect} from 'react-redux';
 import {loadAboutMe} from '../actions';
 import './AboutMePage.scss';
 import {Redirect, Switch, Route, BrowserRouter as Router} from 'react-router-dom';
+import Paper from 'material-ui/Paper';
+import Typography from 'material-ui/Typography';
 
 <Router basename="/aboutme"/>
 
@@ -19,11 +21,12 @@ class AboutMePage extends Component {
   }
 
   render() {
-
     return this.props.aboutme ? (
-      <div id='aboutme-container'>
-        <AboutMe text={this.props.aboutme.text}/>
-      </div>
+        <Paper className="aboutme-container" elevation={4}>
+          <Typography component="p">
+            <AboutMe text={this.props.aboutme.text}/>
+          </Typography>
+        </Paper>
     ) : (
       <div id='aboutme-container'>
       Loading // FIXME
