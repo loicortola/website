@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Provider} from 'react-redux';
-import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
+import {Redirect, Route, Switch} from 'react-router-dom';
+import {ConnectedRouter} from 'react-router-redux';
 import {IntlProvider} from 'react-intl-redux';
-import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles';
+import {createMuiTheme, MuiThemeProvider} from 'material-ui/styles';
 import DevTools from './DevTools';
-
 // Page Components
-import aboutme from '../pages/aboutme';
-import contact from '../pages/contact';
+import Routes from '../routes';
 import Index from './Index';
+// History
+import history from "../history";
+
 
 const theme = createMuiTheme({
   palette: {
@@ -27,30 +29,26 @@ const theme = createMuiTheme({
     },
   },
 });
+
 class Root extends Component {
   constructor(props) {
     super(props);
   }
 
-  
-  
+
   render() {
     return (
         <Provider store={this.props.store}>
-          <Router>
-            <MuiThemeProvider theme={theme}>
-              <IntlProvider locale="en">
-                <Index>
-                  <Switch>
-                    <Route exact path="/" component={aboutme.components.AboutMePage}/>
-                    <Route path="/aboutme" component={aboutme.components.AboutMePage}/>
-                    <Route path="/contact" component={contact.components.ContactPage}/>
-                  </Switch>
-                  <DevTools/>
-                </Index>
-              </IntlProvider>
-            </MuiThemeProvider>
-          </Router>
+          <MuiThemeProvider theme={theme}>
+            <IntlProvider locale="en">
+              <ConnectedRouter history={history.history}>
+                  <Index>
+                    <Routes/>
+                    <DevTools/>
+                  </Index>
+              </ConnectedRouter>
+            </IntlProvider>
+          </MuiThemeProvider>
         </Provider>
     );
   }

@@ -26,7 +26,7 @@ class Index extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    errorMessage: state.profile,
+    location: state.router.location
   };
 };
 

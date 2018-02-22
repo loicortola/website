@@ -3,9 +3,8 @@ import {NavLink} from 'react-router';
 import Header from '../components/Header';
 import {connect} from 'react-redux';
 import {loadMetadata} from '../actions';
-import { withRouter } from 'react-router-dom'
 
-class AboutMePage extends Component {
+class HeaderPartial extends Component {
   constructor(props) {
     super(props);
   }
@@ -31,4 +30,4 @@ const mapStateToProps = (state, ownProps) => ({
   metadata: state.metadata
 });
 
-export default withRouter(connect(mapStateToProps, {loadMetadata})(AboutMePage))
+export default connect(mapStateToProps, {loadMetadata})(HeaderPartial)

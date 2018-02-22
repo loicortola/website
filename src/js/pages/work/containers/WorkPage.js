@@ -1,28 +1,26 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router';
 import {connect} from 'react-redux';
-import './ContactPage.scss';
+import {loadWork} from '../actions';
+import './WorkPage.scss';
 
-class ContactPage extends Component {
+class WorkPage extends Component {
+  
   constructor(props) {
     super(props);
   }
 
   componentDidMount() {
-    this.props.loadContact();
+    //this.props.loadAboutMe();
   }
 
   render() {
-    return (
-      <div id='contact-container'>
-      Hello
-      </div>
-    )
+    (COUCOU)
   }
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  aboutme: state.aboutme
+  work: state.work
 });
 
-export default connect(mapStateToProps)(ContactPage)
+export default connect(mapStateToProps, {loadWork})(WorkPage)
