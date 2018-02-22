@@ -22,11 +22,7 @@ class AboutMePage extends Component {
 
   render() {
     return this.props.aboutme ? (
-        <Paper className="aboutme-container" elevation={4}>
-          <Typography component="p">
-            <AboutMe text={this.props.aboutme.text}/>
-          </Typography>
-        </Paper>
+        <AboutMe text={this.props.aboutme.text}/>
     ) : (
       <div id='aboutme-container'>
       Loading // FIXME

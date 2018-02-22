@@ -23,15 +23,7 @@ class AboutMe extends Component {
 
   render() {
     return (
-        <div className='center'>
-          <h1>
-            <FormattedMessage {...messages.lblWelcome}/>
-          </h1>
-          <div id='introduction'>
-            <FormattedMessage {...messages.lblIntroduction}/>
-          </div>
-          <ReactMarkdown source={this.props.text}/>
-        </div>
+        <ReactMarkdown source={this.props.text}/>
       );
   }
 }

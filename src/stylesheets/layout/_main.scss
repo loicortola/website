@@ -6,6 +6,23 @@ body {
   background-color: $primary-color;
 }
 
+#main {
+  color: $text-color-primary;
+  padding: 20px;
+  text-align: justify;
+  h1 {
+    color: lighten($text-color-secondary, 10);
+  }
+
+  h2 {
+    color: lighten($text-color-secondary, 5);
+  }
+  
+  h3 {
+    color: $text-color-secondary;
+  }
+}
+
 
 @media #{$computer-big} {
   #main {
