@@ -1,4 +1,4 @@
-import {CALL_API} from '../../client/api';
+import {CALL_API} from '../client/api';
 
 /*------------------------------------------------------------------------------------------
  * Loads METADATA

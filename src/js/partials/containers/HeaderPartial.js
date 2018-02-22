@@ -3,6 +3,7 @@ import {NavLink} from 'react-router';
 import Header from '../components/Header';
 import {connect} from 'react-redux';
 import {loadMetadata} from '../actions';
+import { withRouter } from 'react-router-dom'
 
 class AboutMePage extends Component {
   constructor(props) {
@@ -30,4 +31,4 @@ const mapStateToProps = (state, ownProps) => ({
   metadata: state.metadata
 });
 
-export default connect(mapStateToProps, {loadMetadata})(AboutMePage)
+export default withRouter(connect(mapStateToProps, {loadMetadata})(AboutMePage))

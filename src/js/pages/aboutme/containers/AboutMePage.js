@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import {NavLink} from 'react-router';
 import AboutMe from '../components/AboutMe';
 import {connect} from 'react-redux';
+import { withRouter } from 'react-router-dom'
 import {loadAboutMe} from '../actions';
 import './AboutMePage.scss';
 import {Redirect, Switch, Route, BrowserRouter as Router} from 'react-router-dom';
-import Paper from 'material-ui/Paper';
-import Typography from 'material-ui/Typography';
 
 <Router basename="/aboutme"/>
 
@@ -35,4 +33,4 @@ const mapStateToProps = (state, ownProps) => ({
   aboutme: state.aboutme
 });
 
-export default connect(mapStateToProps, {loadAboutMe})(AboutMePage)
+export default withRouter(connect(mapStateToProps, {loadAboutMe})(AboutMePage))

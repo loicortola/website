@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import {HeaderPartial, FooterPartial} from '../partials/header/containers/index';
+import {HeaderPartial, FooterPartial} from '../partials/containers/index';
 import {connect} from 'react-redux';
 import '../../stylesheets/main.scss';
-import Typography from 'material-ui/Typography';
 import Paper from 'material-ui/Paper';
 
 

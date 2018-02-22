@@ -5,17 +5,17 @@ import DevTools from '../containers/DevTools';
 import thunk from 'redux-thunk';
 import api from '../client/api';
 import {addLocaleData} from 'react-intl';
+import merge from 'lodash.merge';
 import en from 'react-intl/locale-data/en';
-import fr from 'react-intl/locale-data/fr';
+import enLocaleData from '../i18n/en';
 // i18n
-addLocaleData([...en, ...fr]);
-
+addLocaleData([...en]);
 
 const configureStore = preloadedState => {
   const reducers = rootReducer;
   const store = createStore(
       reducers,
-      preloadedState,
+      merge(preloadedState, {intl: enLocaleData}),
       compose(
           applyMiddleware(thunk, api, createLogger()),
           DevTools.instrument()

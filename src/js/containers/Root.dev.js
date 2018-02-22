@@ -5,8 +5,10 @@ import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom
 import {IntlProvider} from 'react-intl-redux';
 import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles';
 import DevTools from './DevTools';
+
 // Page Components
 import aboutme from '../pages/aboutme';
+import contact from '../pages/contact';
 import Index from './Index';
 
 const theme = createMuiTheme({
@@ -28,18 +30,6 @@ const theme = createMuiTheme({
 class Root extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      redirect: false
-    };
-  }
-
-  componentWillMount() {
-    // NO-OP
-  }
-  
-  componentWillUpdate() {
-    console.log('ok');
-    this.setState({redirect: true});
   }
 
   
@@ -49,13 +39,14 @@ class Root extends Component {
         <Provider store={this.props.store}>
           <Router>
             <MuiThemeProvider theme={theme}>
-              <IntlProvider>
+              <IntlProvider locale="en">
                 <Index>
                   <Switch>
                     <Route exact path="/" component={aboutme.components.AboutMePage}/>
                     <Route path="/aboutme" component={aboutme.components.AboutMePage}/>
+                    <Route path="/contact" component={contact.components.ContactPage}/>
                   </Switch>
-                  
+                  <DevTools/>
                 </Index>
               </IntlProvider>
             </MuiThemeProvider>
