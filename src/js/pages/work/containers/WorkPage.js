@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {NavLink} from 'react-router';
 import {connect} from 'react-redux';
 import {loadWork} from '../actions';
-import './WorkPage.scss';
+import Work from '../components/Work';
 
 class WorkPage extends Component {
   
@@ -11,11 +11,18 @@ class WorkPage extends Component {
   }
 
   componentDidMount() {
-    //this.props.loadAboutMe();
+    this.props.loadWork();
   }
 
   render() {
-    (COUCOU)
+    if (this.props.work && Object.keys(this.props.work).length > 0) {
+      let result = [];
+      for (let k in Object.keys(this.props.work)) {
+        result.push(<Work experience={this.props.work[k]} key={k}/>);
+      }
+      return result;
+    }
+    return (<div className="work-container">Work</div>)
   }
 }
 

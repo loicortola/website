@@ -1,23 +1,22 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import ReactMarkdown from 'react-markdown';
 import {FormattedMessage, defineMessages, injectIntl} from 'react-intl';
 
-class AboutMe extends Component {
+class Work extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-        <ReactMarkdown source={this.props.text}/>
+        <div>Work is: {this.props.experience.position} @ {this.props.experience.company}</div>
     );
   }
 }
 
 // TypeChecking for properties
-AboutMe.propTypes = {
-  text: PropTypes.string
+Work.propTypes = {
+  experience: PropTypes.object.isRequired
 };
 
-export default injectIntl(AboutMe);
+export default injectIntl(Work);

@@ -5,7 +5,7 @@ const profile = (state = {}, action) => {
   const {type} = action;
   switch (type) {
     case ActionTypes.LOAD_WORK_SUCCESS:
-      return merge({}, state, {workExperiences: action.result});
+      return merge({}, state, action.result);
     }
   return state;
 };

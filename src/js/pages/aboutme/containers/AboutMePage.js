@@ -3,7 +3,6 @@ import {NavLink} from 'react-router';
 import AboutMe from '../components/AboutMe';
 import {connect} from 'react-redux';
 import {loadAboutMe} from '../actions';
-import './AboutMePage.scss';
 
 
 class AboutMePage extends Component {

@@ -48,6 +48,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    @include border-radius-important(0);
   }
 }
 
