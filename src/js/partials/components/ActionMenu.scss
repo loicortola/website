@@ -1,0 +1,25 @@
+@import "../../../stylesheets/abstracts/_variables";
+@import "../../../stylesheets/abstracts/_media";
+
+#action-menu {
+  position: absolute;
+  @media #{$handheld} {
+    width: 100%;
+    text-align: center;
+    top: 28px;
+  }
+
+  @media #{$computer-big} {
+    right: 228px;
+    top: 120px;
+  }
+
+  @media #{$computer-small} {
+    right: 78px;
+    top: 120px;
+  }
+  
+  button {
+    margin-left: 28px;
+  }
+}

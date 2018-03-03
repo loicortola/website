@@ -5,6 +5,7 @@ import {FormattedMessage, injectIntl} from 'react-intl';
 import {Link} from 'react-router-dom';
 import Avatar from 'material-ui/Avatar';
 import Menu from './Menu';
+import ActionMenu from './ActionMenu';
 
 class Header extends Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class Header extends Component {
               <div className="catchline">{this.props.metadata.catchline}</div>
             </div>
           </div>
+          <ActionMenu/>
         </header>
     );
   }
