@@ -1,26 +1,24 @@
 sudo: required
-
 language: node_js
 node_js:
-  - "node"
-
+- node
 cache:
   directories:
-    - "node_modules"
-
+  - node_modules
 services:
-  - docker
-
+- docker
 install:
-  - npm install
-
+- npm install
 script:
-  - npm test
-  - npm run-script build
-  - docker build -t loicortola/website:${TRAVIS_BUILD_NUMBER} .
-  
+- npm test
+- npm run-script build
+- docker build -t loicortola/website:${TRAVIS_BUILD_NUMBER} .
 deploy:
   provider: script
   script: bash bin/docker_push.sh
   on:
     branch: master
+env:
+  global:
+  - secure: riMJznfidx11VSEMm33N8GCeWkHEbjottJJzLnX86uTQRP7VdY3GCXii95tOvHncSa7/Q7sMKxWPJ/dJqIuQ+oRtwz1H5LuV4FnC34SAHiGhIm3zkAUkCa1MMhh/EdRcTOJ9pmGLYwb5Ur8A4zm0UECsI3UQuzBqKn0zHeWpC1i5Adef9o8kvtUeQIYahLpOOehEGvMCECk54OvrwXsRdymukDDYdsWI3g28HaFRnBiVG7XBOnQWcJHVValcxwMioLyiU0uk+uTw8+xerGoyNGSrKIm/wu1ypgf7AjKqfhG48vDfo6VxPDz85EvV8tdgJinNCasPAFmWCTNSgkplWgeFPdx0vGYXC8tqHW3IL7/EREBQvOzs7hbgBEKArrS8Hjh92rOO3vnN3yfcdgpL0HJfvKh3KuRaEkfdanGda/BhG1JfAZIhZPRprDimWuewS4mK3/T+vJF8vElHmid/CUjSgOhVc3zg+mc0IjDgtbncLQGxcRV/yUfGFoIApQKtyIL5dxC29Y7uZFxQY1+LCbj16OWfIrfsbFSOh1II1FFak/BSj0/QhcAPUEIgGqnxTWxBoLabRk0hz65wAT/K/+5ZXjMov/MSG52DwL/MCLMbRhLKptKzAcmfq/J72rM1yTd7pv5lut/ReMMBjTFM6AEdQBgq1WztDbK9z8FPBoc=
+  - secure: UVJ5ctOA5CHats/JRqVK+R0IIxYgBrXWSMLMk9+Qo5bzQSWUyWWy53DdAZbMg9METVkFfMJeuERWCFX0MFg9/Vw+9BgECrt7ZN369CPJQ+1OeIkDAZmmTpEA5HKhJ4eOVvwC+WPZPE7D6XZM8KrMwS9gtZbrN2QadXa1v1c5HlTHmkcZuklci88wnFmhkcUxP003tODSThOscc70nqYtnBUk9xvUfZvfhqQXs4P7J/h5mzsYdGc00iJUYGw+JJaimMwDjRh5hxZzjqfaTZXCBPKitY2FoChRecivovLVpKW+K9AV1Z582dNRX1RBsV7oHUJZX2TctL67mGP8Pxke+kV+xFet+DIdnFJ8iPYRa3vgMv2nfFYBOuaKAiZSfeS4rtZg3X/vTEFBDmEgiAnbVno6Av5aUCN1Hqor3p5hYXWGzEOIAHeCuu/RW+gGpIBEO6KC3lKcL/r744DanfQosW9yzD0d/xhJaIkCi+Lou314Vy5os0AeyDxMgHq7AEXTEYgQCpSCEc/3ShhpYnTUtWgF2nKgnp5qFJiZzaxHPPOWUstaP+vUdsnYw60lIDulBS1e22cS1QoRay04JsyfAGwseAODu11dM1nPRBmA7Gx9UPtCAsg3Xd8LISaVFPZ9uEVNZ+l5j3OmiBmCOnsp3W7RMeGpj59xjm1mS2AIbBQ=
