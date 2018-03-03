@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {NavLink} from 'react-router';
 import Header from './Header';
 import {connect} from 'react-redux';
-import {loadMetadata} from '../actions';
+import {loadMetadata} from '../../actions/cv';
 
 class HeaderPartial extends Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class HeaderPartial extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  metadata: state.metadata
+  metadata: state.cv.metadata
 });
 
 export default connect(mapStateToProps, {loadMetadata})(HeaderPartial)

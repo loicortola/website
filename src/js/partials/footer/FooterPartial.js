@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {NavLink} from 'react-router';
 import Footer from './Footer';
 import {connect} from 'react-redux';
-import {loadMetadata} from '../actions';
+import {loadMetadata} from '../../actions/cv';
 
 class FooterPartial extends Component {
   constructor(props) {

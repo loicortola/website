@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router';
 import {connect} from 'react-redux';
-import {loadWork} from '../actions';
+import {loadWork} from '../../../actions/cv';
 import Work from '../components/Work';
 
 class WorkPage extends Component {
@@ -27,7 +27,7 @@ class WorkPage extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  work: state.work
+  work: state.cv.work
 });
 
 export default connect(mapStateToProps, {loadWork})(WorkPage)

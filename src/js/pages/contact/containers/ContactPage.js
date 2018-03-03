@@ -16,7 +16,7 @@ class ContactPage extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  metadata: state.metadata
+  metadata: state.cv.metadata
 });
 
 export default connect(mapStateToProps)(ContactPage)

@@ -9,7 +9,7 @@ import {createMuiTheme, MuiThemeProvider} from 'material-ui/styles';
 import Routes from '../routes';
 import Index from './index/Index';
 // History
-import history from "../history";
+import history from "../store/history";
 
 
 

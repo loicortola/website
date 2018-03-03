@@ -11,7 +11,7 @@ import DevTools from './index/dev/DevTools';
 import Routes from '../routes';
 import Index from './index/Index';
 // History
-import history from "../history";
+import history from "../store/history";
 
 
 const theme = createMuiTheme({
