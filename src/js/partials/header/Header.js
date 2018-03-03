@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import {FormattedMessage, injectIntl} from 'react-intl';
 import {Link} from 'react-router-dom';
 import Avatar from 'material-ui/Avatar';
-import Menu from './Menu';
-import ActionMenu from './ActionMenu';
+import Menu from './menu/Menu';
+import ActionMenu from './actionmenu/ActionMenu';
 
 class Header extends Component {
   constructor(props) {

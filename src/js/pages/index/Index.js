@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {FooterPartial, HeaderPartial} from '../partials/containers/index';
+import {Footer, Header} from '../../partials/components';
 import {connect} from 'react-redux';
-import '../../stylesheets/main.scss';
+import '../../../stylesheets/main.scss';
 import Paper from 'material-ui/Paper';
 import Button from 'material-ui/Button';
 import DraftIcon from 'material-ui-icons/Drafts';
@@ -16,7 +16,7 @@ class Index extends Component {
   render() {
     return (
         <div>
-          <HeaderPartial/>
+          <Header/>
           <Paper id="main" className="main-container" elevation={4}>
             {this.props.children}
           </Paper>
@@ -27,7 +27,7 @@ class Index extends Component {
               </Button>
             </div>
           </div>
-          <FooterPartial/>
+          <Footer/>
         </div>
     )
   }

@@ -5,10 +5,11 @@ import {Redirect, Route, Switch} from 'react-router-dom';
 import {ConnectedRouter} from 'react-router-redux';
 import {IntlProvider} from 'react-intl-redux';
 import {createMuiTheme, MuiThemeProvider} from 'material-ui/styles';
-import DevTools from './DevTools';
+import DevTools from './index/dev/DevTools';
+
 // Page Components
 import Routes from '../routes';
-import Index from './Index';
+import Index from './index/Index';
 // History
 import history from "../history";
 

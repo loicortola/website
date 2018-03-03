@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router';
-import Footer from '../components/Footer';
+import Footer from './Footer';
 import {connect} from 'react-redux';
 import {loadMetadata} from '../actions';
 

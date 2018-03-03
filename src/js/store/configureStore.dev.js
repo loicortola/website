@@ -6,7 +6,7 @@ import reducers from '../reducers';
 import history from '../history';
 import i18n from '../i18n/index';
 import thunk from 'redux-thunk';
-import DevTools from '../containers/DevTools';
+import DevTools from '../pages/index/dev/DevTools';
 
 
 const configureStore = preloadedState => {

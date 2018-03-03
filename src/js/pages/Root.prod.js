@@ -7,9 +7,10 @@ import {IntlProvider} from 'react-intl-redux';
 import {createMuiTheme, MuiThemeProvider} from 'material-ui/styles';
 // Page Components
 import Routes from '../routes';
-import Index from './Index';
+import Index from './index/Index';
 // History
 import history from "../history";
+
 
 
 const theme = createMuiTheme({
