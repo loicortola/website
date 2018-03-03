@@ -51,7 +51,7 @@
     "webpack-merge": "^4.1.1"
   },
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "start": "webpack-dev-server --open --config webpack.dev.js --host 0.0.0.0",
     "build": "rm -rf dist && webpack --config webpack.prod.js"
   },
   "repository": {

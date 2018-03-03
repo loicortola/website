@@ -1,0 +1,26 @@
+sudo: required
+
+language: node_js
+node_js:
+  - "node"
+
+cache:
+  directories:
+    - "node_modules"
+
+services:
+  - docker
+
+install:
+  - npm install
+
+script:
+  - npm test
+  - npm run-script build
+  - docker build -t loicortola/website:${TRAVIS_BUILD_NUMBER} .
+  
+deploy:
+  provider: script
+  script: bash bin/docker_push.sh
+  on:
+    branch: master

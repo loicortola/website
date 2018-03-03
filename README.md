@@ -1,28 +1,24 @@
 # Personal Website
 
-## 1. Environment
-We have chosen to use a 100% container-based development environment.
-Therefore, you wont be using your usual IDE's running config.
+## 1. Development Environment
 
-Instead, read and execute the following setup instructions:
+To develop, either use 
 
-### 1.1. Create your development image
+
+### Regular dev environment
+ * Install npm
+ * Run ```npm install```
+ * Run ```npm start```
+
+### Docker-based dev environment
+ * Install docker
+ * Run scripts
+
 ```shell
+# Create your development image
 ./dev/bin/build.sh
-```
-This will create a Docker image named **website:dev**
-
-### 1.2. Clean any existing container named **website**
-```shell
+# Clean previous containers using the same name
 ./dev/bin/clean.sh
+# Start your webpack dev server
+./dev/bin/serve.sh
 ```
-
-### 1.3. In Intellij, add the following Run Configurations
-<i>you should see the screenshots below. if you don't, take a look on the gitlab/github repository or open the images in dev/assets.</i>
-
-**Dashboard**  
-<img src="dev/assets/run-config-www.png" alt="Image Run Config WWW" width="200"/>
-
-<img src="dev/assets/run-config-www-details.png" alt="Image Run Config WWW Details" width="500"/>
-
-<i>NOTE</i>: If the bash option is missing from the run configurations, you have to install the Intellij plugin "BashSupport" (<i>File > Settings > Plugins > Browse repositories...</i>)
