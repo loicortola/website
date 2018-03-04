@@ -2,7 +2,7 @@ import {applyMiddleware, compose, createStore} from 'redux';
 
 import api from '../client/api';
 import reducers from '../reducers';
-import history from '../history';
+import history from './history';
 import i18n from '../i18n/index';
 import thunk from 'redux-thunk';
 

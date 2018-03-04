@@ -17,14 +17,14 @@
 
 @media #{$handheld} {
   #header {
-    height: 48px;
+    height: 56px;
     #metadata {
-      margin: -48px 0 0 48px;
-      height: 48px;
+      margin: -56px 0 0 56px;
+      height: 56px;
       .avatar {
         position: absolute;
-        right: 4px;
-        top: 4px;
+        right: 8px;
+        top: 16px;
         width: 40px;
         height: 40px;
       }
@@ -32,7 +32,7 @@
         position: absolute;
         font-size: $text-size-md;
         left: 10px;
-        bottom: 13px;
+        bottom: 11px;
       }
       .catchline {
         position: absolute;
@@ -40,8 +40,8 @@
         font-style: italic;
         text-align: right ;
         left: 120px;
-        right: 48px;
-        bottom: 13px;
+        right: 56px;
+        bottom: 11px;
         @media (max-width: 512px) {
           visibility: hidden;
         }

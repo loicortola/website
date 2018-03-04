@@ -6,17 +6,17 @@
   @media #{$handheld} {
     width: 100%;
     text-align: center;
-    top: 28px;
+    top: 48px;
   }
 
   @media #{$computer-big} {
     right: 228px;
-    top: 120px;
+    top: 138px;
   }
 
   @media #{$computer-small} {
     right: 78px;
-    top: 120px;
+    top: 138px;
   }
   
   button {

@@ -2,18 +2,10 @@ import React, {Component} from 'react';
 import './ActionMenu.scss';
 import PropTypes from 'prop-types';
 import {FormattedMessage, injectIntl} from 'react-intl';
-import {Link} from 'react-router-dom';
-import IconButton from 'material-ui/IconButton';
-import Drawer from 'material-ui/Drawer';
-import List, {ListItem, ListItemIcon, ListItemText} from 'material-ui/List';
-import Divider from 'material-ui/Divider';
-import AccountCircleIcon from 'material-ui-icons/AccountCircle';
-import ExtensionIcon from 'material-ui-icons/Extension';
-import WorkIcon from 'material-ui-icons/Work';
-import PollIcon from 'material-ui-icons/Poll';
-import DraftsIcon from 'material-ui-icons/Drafts';
-import SchoolIcon from 'material-ui-icons/School';
-import StarIcon from 'material-ui-icons/Star';
+import TwitterIcon from './Twitter';
+import LinkedInIcon from './LinkedIn';
+import GithubIcon from './Github';
+import InstagramIcon from './Instagram';
 import Button from 'material-ui/Button';
 
 class ActionMenu extends Component {
@@ -25,16 +17,16 @@ class ActionMenu extends Component {
     return (
         <nav id="action-menu">
           <Button variant="fab" mini color="secondary" aria-label="add">
-            <StarIcon/>
+            <GithubIcon/>
           </Button>
           <Button variant="fab" mini color="secondary" aria-label="add">
-            <StarIcon/>
+            <TwitterIcon/>
           </Button>
           <Button variant="fab" mini color="secondary" aria-label="add">
-            <StarIcon/>
+            <LinkedInIcon/>
           </Button>
           <Button variant="fab" mini color="secondary" aria-label="add">
-            <StarIcon/>
+            <InstagramIcon/>
           </Button>
         </nav>
     );
