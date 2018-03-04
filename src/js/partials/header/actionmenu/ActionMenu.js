@@ -17,16 +17,16 @@ class ActionMenu extends Component {
     return (
         <nav id="action-menu" className={(this.props.shrink ? 'shrink' : 'expand')}>
           <Button variant="fab" mini color="secondary" aria-label="add">
-            <GithubIcon/>
+            <GithubIcon />
           </Button>
           <Button variant="fab" mini color="secondary" aria-label="add">
-            <TwitterIcon/>
+            <TwitterIcon />
           </Button>
           <Button variant="fab" mini color="secondary" aria-label="add">
-            <LinkedInIcon/>
+            <LinkedInIcon />
           </Button>
           <Button variant="fab" mini color="secondary" aria-label="add">
-            <InstagramIcon/>
+            <InstagramIcon />
           </Button>
         </nav>
     );

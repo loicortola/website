@@ -2,8 +2,12 @@
   {
     "id": 8,
     "position": "CTO",
-    "company": "Jawg",
-    "companyDetails": "Disruptive Mapping Platform made in France.  **Main Clients**: SNCF, OVH, OpenDataSoft, Mon Docteur, LibertyRider, RATP...",
+    "company": {
+      "name": "Jawg",
+      "description": "Disruptive Mapping Platform made in France",
+      "customers": ["SNCF", "OVH", "OpenDataSoft", "Mon Docteur", "Liberty Rider", "RATP"],
+      "logo": "logo-jawg.jpg"
+    },
     "startDate": "2016-01",
     "location": {
         "name": "Paris, France",
@@ -24,9 +28,13 @@
   },
   {
     "id": 7,
-    "position": "Tech Lead / Project Lead",
-    "company": "eBiz (eBusiness Information)",
-    "companyDetails": "Java/JEE/Android service company  \r\nSize: ~100 empl.  \r\n&#8680;Main Clients: ETAM, Mirakl, Club Med, JCDecaux, RATP, EDF, Laposte, Lafarge, Orange...",
+    "position": "Lead Developer",
+    "company": {
+      "name": "eBiz (eBusiness Information)",
+      "description": "Raising Coding ninjas in DevOps, Java, Web and Mobile technologies",
+      "customers": ["ETAM", "Mirakl", "Club Med", "RATP", "JCDecaux", "Laposte"],
+      "logo": "logo-ebiz.png"
+    }, 
     "startDate": "2013-02",
     "endDate": "2017-07",
     "location": {
@@ -51,29 +59,14 @@
     ]
   },
   {
-    "id": 6,
-    "position": "Communication consultant",
-    "company": "Ymage Design for ITAnano",
-    "companyDetails": "Exclusive distributor of the ITAnano watch brand in France/Switzerland/Belgium",
-    "startDate": "2012-09",
-    "endDate": "2013-03",
-    "location": {
-        "name": "Lyon, France",
-        "coordinates": {
-          "lat": 45.764043,
-          "lng": 4.835659
-        }
-      },
-    "description": [
-      {"label":"Management of the company's image on social networks","details":"Responsible for building the company's image and presence on social networks. This was a challenging aspect as ITAnano is still a very young brand among today's market"},
-      {"label":"UX advisor for the national website and the e-commerce platform","details":""}
-    ]
-  },
-  {
     "id": 5,
     "position": "IT Specialist Intern",
-    "company": "DP Technology corp.",
-    "companyDetails": "World leader in CAM software for industry. Most famous product: ESPRIT  \r\nSize: ~150 empl. worldwide  \r\n<br/>Main Clients: Boeing, HP, Cartier, Gillette...",
+    "company": {
+      "name": "DP Technology",
+      "description": "World leader in CAM software for industry. Most famous product: ESPRIT",
+      "customers": ["Boeing", "HP", "Cartier", "Gillette"],
+      "logo": "logo-dp.jpg"
+    },
     "startDate": "2011-07",
     "endDate": "2012-07",
     "location": {

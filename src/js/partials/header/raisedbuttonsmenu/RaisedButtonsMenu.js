@@ -23,7 +23,7 @@ class RaisedButtonsMenu extends Component {
             Message me
             <EmailIcon className="icon"/>
           </Button>
-          <Button variant="raised" color="secondary" className="resume">
+          <Button variant="raised" color="secondary"  className="resume">
             Printable Version
             <AttachmentIcon className="icon"/>
           </Button>

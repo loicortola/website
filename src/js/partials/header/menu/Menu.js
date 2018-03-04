@@ -41,7 +41,7 @@ class Menu extends Component {
                       <ListItemIcon>
                         <AccountCircleIcon/>
                       </ListItemIcon>
-                      <Link to={"aboutme"}><ListItemText primary={<FormattedMessage id="lbl.home"/>}/></Link>
+                      <Link to={"aboutme"}><ListItemText primary={<FormattedMessage id="lbl.home"/>} className="text"/></Link>
                     </ListItem>
                   </List>
                    <Divider/>
