@@ -2,23 +2,47 @@
 @import "../../../../stylesheets/abstracts/_media";
 
 #action-menu {
-  position: absolute;
+  &.expand {
+    position: absolute;
+  }
+  &.shrink {
+    position: fixed;
+    top: 8px;
+  }
   @media #{$handheld} {
-    width: 100%;
-    text-align: center;
-    top: 48px;
+    &.expand {
+      width: 100%;
+      text-align: center;
+      top: 148px;
+    }
+    &.shrink {
+      display: none;
+    }
   }
 
   @media #{$computer-big} {
-    right: 228px;
-    top: 138px;
+    &.expand {
+      right: 228px;
+      top: 138px;
+    }
+    &.shrink {
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
   }
 
   @media #{$computer-small} {
-    right: 78px;
-    top: 138px;
+    &.expand {
+      right: 78px;
+      top: 138px;
+    }
+
+    &.shrink {
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
   }
-  
+
   button {
     margin-left: 28px;
   }

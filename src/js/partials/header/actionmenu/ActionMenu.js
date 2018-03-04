@@ -15,7 +15,7 @@ class ActionMenu extends Component {
   
   render() {
     return (
-        <nav id="action-menu">
+        <nav id="action-menu" className={(this.props.shrink ? 'shrink' : 'expand')}>
           <Button variant="fab" mini color="secondary" aria-label="add">
             <GithubIcon/>
           </Button>
@@ -35,7 +35,7 @@ class ActionMenu extends Component {
 
 // TypeChecking for properties
 ActionMenu.propTypes = {
-  text: PropTypes.string
+  shrink: PropTypes.bool.isRequired
 };
 
 export default injectIntl(ActionMenu);
