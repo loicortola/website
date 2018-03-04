@@ -2,6 +2,7 @@
 @import "../../../../stylesheets/abstracts/_media";
 
 #raised-button-menu {
+  z-index: 10;
   &.expand {
     position: absolute;
     display: flex;

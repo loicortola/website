@@ -8,9 +8,10 @@
 }
 
 #header {
-
+  position: relative;
   &.shrink {
     min-height: 200px;
+    z-index: 10;
   }
   #menu {
     position: absolute;

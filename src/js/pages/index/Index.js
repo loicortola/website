@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import '../../../stylesheets/main.scss';
 import Paper from 'material-ui/Paper';
 import Button from 'material-ui/Button';
-import DraftIcon from 'material-ui-icons/Drafts';
+import EmailIcon from 'material-ui-icons/Email';
 import './Index.scss';
 
 class Index extends Component {
@@ -23,7 +23,7 @@ class Index extends Component {
           <div className="bottom-menu-container">
             <div className="contact-button-container">
               <Button variant="fab" color="secondary" aria-label="add">
-                <DraftIcon/>
+                <EmailIcon/>
               </Button>
             </div>
           </div>
