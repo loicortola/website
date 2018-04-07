@@ -1,0 +1,19 @@
+#main {
+  .card {
+    max-width: 800px;
+  }
+  .media {
+    height: 194px;
+  }
+  .actions {
+    display: flex;
+  }
+
+  .expand {
+    transform: rotate(0deg);
+    margin-left: auto;
+  }
+  .expand-open {
+    transform: rotate(180deg);
+  }
+}

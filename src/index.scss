@@ -1,0 +1,21 @@
+:global {
+  @import "theme/theme";
+  
+  /**
+   * Set up a decent box model on the root element
+   */
+  html {
+    box-sizing: border-box;
+    background-color: $primary-color;
+    font-size: $text-size-sm;
+    font-family: $font-family;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .left {
+    text-align: left;
+  }
+}

@@ -1,9 +1,8 @@
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
+const common = require('./webpack.config.js');
 const path = require('path');
 
 const staticSourcePath = path.join(__dirname, 'static');
@@ -32,7 +31,6 @@ module.exports = merge(common, {
     }),
     // Hashed module ids instead of names. Prod only
     new webpack.HashedModuleIdsPlugin(),
-    
     // Copy html files and resources to destination, minify
     new HtmlWebpackPlugin({
       template: path.resolve(staticSourcePath, 'index.html'),
@@ -46,9 +44,6 @@ module.exports = merge(common, {
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
-    }),// Minify CSS
-    new StyleExtHtmlWebpackPlugin({
-      minify: true
     })
   ]
 });
