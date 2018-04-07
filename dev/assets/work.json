@@ -4,26 +4,58 @@
     "position": "CTO",
     "company": {
       "name": "Jawg",
-      "description": "Disruptive Mapping Platform made in France",
-      "customers": ["SNCF", "OVH", "OpenDataSoft", "Mon Docteur", "Liberty Rider", "RATP"],
+      "description": "Disruptive Mapping & Geo-spatial solutions made in France",
+      "customers": [
+        "SNCF",
+        "OVH",
+        "OpenDataSoft",
+        "Mon Docteur",
+        "Liberty Rider",
+        "RATP"
+      ],
       "logo": "logo-jawg.jpg"
     },
     "startDate": "2016-01",
     "location": {
-        "name": "Paris, France",
-        "coordinates": {
-          "lat": 48.864716,
-          "lng": 2.349014
-        }
-      },
+      "name": "Paris, France",
+      "coordinates": {
+        "lat": 48.864716,
+        "lng": 2.349014
+      }
+    },
     "description": [
-      {"label": "Architect and Developer of the distributed Mapping Platform", "details": "The 'Mapsquare' project codename was released under the brand **Jawg** (Jawg maps). I was the first developer of the platform.  \r\nMy main role was to create a distributed ecosystem of micro services for our Mapping Platform. Storage API (GIS allowing to manipulate and manage datasets), Tile-edge (a highly efficient Map Server), Static Maps API, authentication system, and the administration section."},
-      {"label": "Management of Clustering / Data Import SDK / Geo-Caching", "details": "In order to be highly efficient, GIS need to implement specific features such as multi-threaded Geocaching, Meta-Tile awareness, Server-side clustering, and multi-layer clustering.  \r\nAlso, managing datasets often requires to import heterogeneous Data from different providers. I was in charge to create the API for a Data Import SDK targeting on-premises versions of the platform for some of our customers. This allowed to handle tricky cases such as transaction rollback, data deduplication (both semantical and geographical), and conflict resolution."}
+      {
+        "label": "Platform lead Architect & Developer",
+        "details": "Project **mapsquare** lead to the creation of our company, **Jawg Maps**. I was the first developer of the platform.  \r\nMy main role was to create a distributed ecosystem of micro services for our Mapping Platform. Storage API (GIS allowing to manipulate and manage datasets), Tile-edge (a highly efficient Map Server), Static Maps API, authentication system, and the administration section."
+      },
+      {
+        "label": "Management of Clustering / Data Processors / Geo-Caching",
+        "details": "In order to be highly efficient, GIS need to implement specific features such as multi-threaded Geocaching, Meta-Tile awareness, Server-side clustering, and multi-layer clustering.  \r\nAlso, managing datasets with tens of thousands of geometries often requires to import heterogeneous Data from different providers. I was in charge to create the API for a Data Import Processing SDK targeting on-premises versions of the platform for some of our customers. This allowed to handle tricky cases such as transaction rollback, data deduplication (both semantical and geographical), and conflict resolution."
+      },
+      {
+        "label": "Geospatial data consultant",
+        "details": "After working with geo-spatial data management for a few years, our team is now helping several companies by sharing its expertise to help companies build awesome services with their own geo-localized assets."
+      },
+      {
+        "label": "DevOps consultant",
+        "details": "By doing many load-testing campains and working hard on automation, I have been working with several partners to help share the word about DevOps practices. I also advocate in different tech conferences and meetups such as Devoxx, Modern DevOps, and so on."
+      }
     ],
     "skills": [
-      "Node.js", "Java", "Akka", "Netty", "Vert.x", "Spring-Boot", "Go", "Rust", "PostgreSQL",
-      "PostGIS", "Docker", "Ansible", "InfluxDB", "Grafana", "Metalery", "ImpOsm", "Angular.js",
-      "Kapacitor", "Telegraf", "Consul", "React.js", "Redux", "Webpack"
+      "Java",
+      "Vert.x",
+      "Spring-Boot",
+      "Node.js",
+      "PostgreSQL",
+      "PostGIS",
+      "Docker",
+      "Ansible",
+      "InfluxDB",
+      "Grafana",
+      "Consul",
+      "React.js",
+      "Redux",
+      "Webpack"
     ]
   },
   {
@@ -32,30 +64,64 @@
     "company": {
       "name": "eBiz (eBusiness Information)",
       "description": "Raising Coding ninjas in DevOps, Java, Web and Mobile technologies",
-      "customers": ["ETAM", "Mirakl", "Club Med", "RATP", "JCDecaux", "Laposte"],
+      "customers": [
+        "ETAM",
+        "Mirakl",
+        "Club Med",
+        "RATP",
+        "JCDecaux",
+        "Laposte"
+      ],
       "logo": "logo-ebiz.png"
-    }, 
+    },
     "startDate": "2013-02",
     "endDate": "2017-07",
     "location": {
-        "name": "Paris, France",
-        "coordinates": {
-          "lat": 48.864716,
-          "lng": 2.349014
-        }
-      },
+      "name": "Paris, France",
+      "coordinates": {
+        "lat": 48.864716,
+        "lng": 2.349014
+      }
+    },
     "description": [
-      {"label":"Architecture and Development of an ecosystem of Android apps for festivals and conferences. Applications target staff, attendees, and Android screens.","details":"Creation of a new offer around festivals and conference centers to add live data, Augmented reality and social features, and city-wide gaming capabilities.\nCheck it out on http://eventri.be"},
-      {"label":"Architecture and Development of a Java/JS/Android/iOS SDK","details":"Design of the DesignMyApp core engine, and common/SDK open source libraries. Check it out on Github: https://github.com/e-biz/designmyapp"},
-      {"label":"Architecture and Development of full web stack public websites","details":"<ul><li>Responsive design, Material design</li>\n<li>Gulp, Bower, AngularJS, Sass, Bootstrap</li>\n<li>http://eventri.be</li>\n<li>http://www.designmyapp.mobi</li></ul>"},
-      {"label":"Development of a conference driving mobile application (Android >= 4.0)","details":"This project had two challenges:\n<ul>\n<li>How can we use the tablets/phones's ergonomy to our advantage to make a conference more dynamic for students?</li>\n<li>What tools can we give the showman/teacher so he could get closer to his audience, communicate further with them, push multimedia contents to the clients and get live feedback from them?</li>\n</ul>"},
-      {"label":"Adaptation of an open data database model (GTFS) for train schedules to be used on an embedded SQLite database","details":"The concept was to identify which info was relevant, and change the original use case scenario; then build a conversion model with a hybrid Java/SQL migration program.\nIn the end, the embedded database is about 1/290 of the original size"},
-      {"label":"Teaching and giving conferences about Java, Java EE, Android, Git, Scrum and eXtreme programming","details":"To this day, here is a list of the universities and schools of engineering (delivering either bachelor,master or phd degrees) I went to:\n<br/>\nEPF Sceaux, ECE Paris, Université de Technologie de Troyes, Université de Rouen, ESAIP Angers, CPE Lyon"}
+      {
+        "label": "Development of an ecosystem of Android apps for festivals and conferences",
+        "details": "Creation of a new offer around festivals and conference centers to add live data and geo-spatial information, Augmented reality and social features. It also embedded city-wide gaming capabilities and served as an experiment in the Transmusicales festival in 2014."
+      },
+      {
+        "label": "Development of a Java/JS/Android/iOS SDK for DesignMyApp",
+        "details": "DesignMyApp is a native mobile-app generator and one of the first single-node container orchestrators. I designed the core engine, and common/SDK open source libraries. Check it out on Github: https://github.com/e-biz/designmyapp ."
+      },
+      {
+        "label": "Development of a conference driving mobile application (Android >= 4.0)",
+        "details": "This project had two challenges:\r\n * How can we use the tablets/phones's ergonomy to our advantage to make a conference more dynamic for students?\r\n * What tools can we give the showman/teacher so he could get closer to his audience, communicate further with them, push multimedia contents to the clients and get live feedback from them?"
+      },
+      {
+        "label": "Adaptation of an open data database model (GTFS) for train schedules to be used on an embedded SQLite database",
+        "details": "The concept was to reverse-engineer the time-based info into a predictive frequency model.\r\nIn the end, the embedded database is about 1/290 of the original size."
+      },
+      {
+        "label": "Tech conferences & Trainings",
+        "details": "I started giving trainings and conferences about Java, Java EE, Android, and Git to mostly universities."
+      }
     ],
     "skills": [
-      "Java","Spring","Hibernate","Jackson","Maven",
-      "Android","Gradle","Git","MySQL","MongoDB",
-      "HTML5,CSS3","AngularJs","Grunt","Gulp","Bower","Yeoman"
+      "Java",
+      "Spring",
+      "Hibernate",
+      "Jackson",
+      "Maven",
+      "Android",
+      "Gradle",
+      "Git",
+      "MySQL",
+      "MongoDB",
+      "HTML5",
+      "CSS3",
+      "Angular.js",
+      "Grunt",
+      "Gulp",
+      "Bower"
     ]
   },
   {
@@ -64,25 +130,44 @@
     "company": {
       "name": "DP Technology",
       "description": "World leader in CAM software for industry. Most famous product: ESPRIT",
-      "customers": ["Boeing", "HP", "Cartier", "Gillette"],
+      "customers": [
+        "Boeing",
+        "HP",
+        "Cartier",
+        "Gillette"
+      ],
       "logo": "logo-dp.jpg"
     },
     "startDate": "2011-07",
     "endDate": "2012-07",
     "location": {
-        "name": "Los Angeles, CA, United States",
-        "coordinates": {
-          "lat": 34.052235,
-          "lng": -118.243683
-        }
-      },
+      "name": "Los Angeles, CA, United States",
+      "coordinates": {
+        "lat": 34.052235,
+        "lng": -118.243683
+      }
+    },
     "description": [
-      {"label":"Development of ASP modules for EspritWeb","details":""},
-      {"label":"Management of the Backup system renewal","details":""},
-      {"label":"Network/System administration of the IT infrastructure/datacenter","details":""}
+      {
+        "label": "Development of ASP modules for EspritWeb",
+        "details": "I started my 1-year internship in Camarillo California (Los angeles area) in July 2011. I was in charge of developing two new modules for the EspritWeb platform. One Remote file sharing system, called **Cloud Drive**, and a set of **IT Administration tools** for the IT department. Technologies involved were ASP.NET and Microsoft SQL."
+      },
+      {
+        "label": "Management of the Backup system renewal",
+        "details": "The company backups were manual backups made on tapes or ghost DvDs. I lead the company backup system renewal, from scratch (quotes, design, test, setup) using Hyper-V snapshots, full & diff backups, tape drives and NAS servers. It also involved Powershell scripting for cron scheduling and reporting after every nightly backup."
+      },
+      {
+        "label": "Network/System administration of the IT infrastructure/datacenter",
+        "details": "I was handling system and network administration issues, to deliver high availability for both front and back office applications (Web servers, File servers, IP phones) using Microsoft Hyper-V based virtual servers"
+      }
     ],
     "skills": [
-      "Windows Server 2008 R2","Cisco/HP routing","Microsoft SQL Server","Symantec BackupExec","PowerShell","ASP"
+      "Windows Server",
+      "Cisco routing",
+      "Microsoft SQL",
+      "Symantec BackupExec",
+      "PowerShell",
+      "ASP.NET"
     ]
   }
 ]
