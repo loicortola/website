@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
-import './Footer.scss';
+import styles from './Footer.scss';
 import PropTypes from 'prop-types';
-import {FormattedMessage, defineMessages, injectIntl} from 'react-intl';
-import { Link } from 'react-router-dom';
-import Avatar from 'material-ui/Avatar';
-import IconButton from 'material-ui/IconButton';
-import Drawer from 'material-ui/Drawer';
+import Typography from 'material-ui/Typography';
+import {defineMessages, injectIntl} from 'react-intl';
 
 
 const messages = defineMessages({
@@ -25,21 +22,19 @@ class Footer extends Component {
     this.state = {open: false};
   }
 
-
-  handleToggle = () => this.setState({open: !this.state.open});
-
-  handleClose = () => this.setState({open: false});
-
   render() {
     return (
-        <footer id='footer'>Copyright © 2018 From Resourcepool with Love.</footer>
-      );
+        <div id={styles.footerContainer}>
+          <footer id={styles.footer}>
+            <Typography component="span" variant="body1" className={styles.text}>Copyright © 2018 From Resourcepool with Love.</Typography>
+          </footer>
+        </div>
+    );
   }
 }
 
 // TypeChecking for properties
 Footer.propTypes = {
-  text: PropTypes.string
 };
 
 export default injectIntl(Footer);

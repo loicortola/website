@@ -6,6 +6,7 @@ import Avatar from 'material-ui/Avatar';
 import Menu from './menu/Menu';
 import ActionMenu from './actionmenu/ActionMenu';
 import RaisedButtonMenu from './raisedbuttonsmenu/RaisedButtonsMenu';
+import Typography from 'material-ui/Typography';
 import classNames from 'classnames';
 
 class Header extends Component {
@@ -42,7 +43,7 @@ class Header extends Component {
                 <Avatar
                     src="images/profile-default.png"
                     className={styles.avatar}/>
-                <div className={styles.name}>{this.props.metadata.firstName} {this.props.metadata.lastName}</div>
+                <Typography component="div" variant="headline" className={styles.name}>{this.props.metadata.firstName} {this.props.metadata.lastName}</Typography>
                 <div className={styles.catchline}>{this.props.metadata.catchline}</div>
               </div>
             </div>

@@ -9,6 +9,9 @@
 
 #header {
   position: relative;
+  .name {
+    color: white;
+  }
   &.shrink {
     min-height: $header-large-height;
     z-index: 10;

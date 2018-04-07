@@ -11,9 +11,7 @@ class FooterPartial extends Component {
   
   render() {
     return (
-      <div id='footer-container'>
-        <Footer />
-      </div>
+      <Footer />
     )
   }
 }

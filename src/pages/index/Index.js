@@ -16,9 +16,11 @@ class Index extends Component {
     return (
         <div>
           <Header/>
-          <Paper id={style.main} className={style.mainContainer} elevation={4}>
-            {this.props.children}
-          </Paper>
+          <div className={style.mainContainer}>
+            <Paper id={style.main} elevation={4}>
+              {this.props.children}
+            </Paper>
+          </div>
           <div className={style.bottomMenuContainer}>
             <div className={style.contactButtonContainer}>
               <Button variant="fab" color="secondary" aria-label="add">
