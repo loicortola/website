@@ -6,44 +6,33 @@ import Typography from 'material-ui/Typography';
 import moment from "moment/moment";
 import styleSass from './WorkXPHeader.scss';
 
-export const styles = theme => {
-  console.log(styleSass);
-  console.log(Object.assign({
-    root: theme.mixins.gutters({
-      display: 'flex',
-      alignItems: 'center',
-      paddingTop: theme.spacing.unit * 2,
-      paddingBottom: theme.spacing.unit * 2,
-    })}, styleSass));
-  return (
-      Object.assign({
-        root: theme.mixins.gutters({
-          display: 'flex',
-          alignItems: 'center',
-          paddingTop: theme.spacing.unit * 2,
-          paddingBottom: theme.spacing.unit * 2,
-        })}, styleSass));
-}
+export const styles = theme => ({
+      root: theme.mixins.gutters({
+        display: 'flex',
+        alignItems: 'center',
+        paddingTop: theme.spacing.unit * 2,
+        paddingBottom: theme.spacing.unit * 2,
+      })
+    });
 
-function CardHeader(props) {
+function WorkXPHeader(props) {
   const {
     action,
     avatar,
-    classes,
     className: classNameProp,
     component: Component,
     startDate,
     endDate,
     company,
-    position,
-    ...other
+    position
   } = props;
-
+  
+  const classes = Object.assign(props.classes, styleSass);
+  
 
   function getDuration(startDateStr, endDateStr) {
     let startDate = moment(startDateStr);
     if (endDateStr) {
-      console.log('Here');
       // Experience is over
       let endDate = moment(endDateStr);
       let durationInMonths = endDate.diff(startDate, 'months');
@@ -57,7 +46,7 @@ function CardHeader(props) {
   }
 
   return (
-      <Component className={classNames(classes.root, classNameProp)} {...other}>
+      <Component className={classNames(classes.root, classNameProp)}>
         {avatar && <div className={classes.avatar}>{avatar}</div>}
         <div className={classes.content}>
           <Typography
@@ -68,7 +57,7 @@ function CardHeader(props) {
             {position} @ {company.name}
           </Typography>
           <Typography
-              variant={'body2'}
+              variant={'body1'}
               component="span"
               color="textSecondary"
               className={classes.subheader}>
@@ -82,16 +71,11 @@ function CardHeader(props) {
             className={classes.dates}>
           {getDuration(startDate, endDate)}
         </Typography>
-        {action && <div className={classes.action}>{action}</div>}
       </Component>
   );
 }
 
-CardHeader.propTypes = {
-  /**
-   * The action to display in the card header.
-   */
-  action: PropTypes.node,
+WorkXPHeader.propTypes = {
   /**
    * The Avatar for the Card Header.
    */
@@ -116,8 +100,8 @@ CardHeader.propTypes = {
   endDate: PropTypes.string
 };
 
-CardHeader.defaultProps = {
+WorkXPHeader.defaultProps = {
   component: 'div',
 };
 
-export default withStyles(styles, {name: 'MuiCardHeader'})(CardHeader);
+export default withStyles(styles, {name: 'WorkXPHeader'})(WorkXPHeader);
