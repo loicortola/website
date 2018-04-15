@@ -13,19 +13,43 @@ class ActionMenu extends Component {
     super(props);
   }
   
+  openGithub() {
+    if (this.props.metadata) {
+      return this.props.metadata.social.github;
+    }
+  }
+
+  openTwitter() {
+    if (this.props.metadata) {
+      return this.props.metadata.social.twitter;
+    }
+  }
+
+  openLinkedIn() {
+    if (this.props.metadata) {
+      return this.props.metadata.social.linkedin;
+    }
+  }
+
+  openInstagram() {
+    if (this.props.metadata) {
+      return this.props.metadata.social.instagram;
+    }
+  }
+  
   render() {
     return (
         <nav id={styles.actionMenu} className={(this.props.shrink ? styles.shrink : styles.expand)}>
-          <Button variant="fab" mini color="secondary" aria-label="add">
+          <Button variant="fab" mini color="secondary" aria-label="add" href={this.openGithub()}>
             <GithubIcon />
           </Button>
-          <Button variant="fab" mini color="secondary" aria-label="add">
+          <Button variant="fab" mini color="secondary" aria-label="add" href={this.openTwitter()}>
             <TwitterIcon />
           </Button>
-          <Button variant="fab" mini color="secondary" aria-label="add">
+          <Button variant="fab" mini color="secondary" aria-label="add" href={this.openLinkedIn()}>
             <LinkedInIcon />
           </Button>
-          <Button variant="fab" mini color="secondary" aria-label="add">
+          <Button variant="fab" mini color="secondary" aria-label="add" href={this.openInstagram()}>
             <InstagramIcon />
           </Button>
         </nav>
@@ -35,7 +59,8 @@ class ActionMenu extends Component {
 
 // TypeChecking for properties
 ActionMenu.propTypes = {
-  shrink: PropTypes.bool.isRequired
+  shrink: PropTypes.bool.isRequired,
+  metadata: PropTypes.object
 };
 
 export default injectIntl(ActionMenu);

@@ -14,12 +14,8 @@ class HeaderPartial extends Component {
   }
 
   render() {
-    return this.props.metadata ? (
-      <Header metadata={this.props.metadata}/>
-    ) : (
-      <div>
-      Loading // FIXME
-      </div>
+    return (
+        <Header metadata={this.props.metadata}/>
     )
   }
 }

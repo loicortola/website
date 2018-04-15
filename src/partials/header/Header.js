@@ -33,6 +33,20 @@ class Header extends Component {
       });
     }
   }
+  
+  renderName() {
+    if (this.props.metadata) {
+      return this.props.metadata.firstName + ' ' + this.props.metadata.lastName;
+    }
+    return 'Loading';
+  }
+  
+  renderCatchline() {
+    if (this.props.metadata) {
+      return this.props.metadata.catchline;
+    }
+    return 'Loading';
+  }
 
   render() {
     return (
@@ -41,14 +55,14 @@ class Header extends Component {
             <div id={styles.headerMetaContainer}>
               <div id={styles.metadata}>
                 <Avatar
-                    src="images/profile-default.png"
+                    src="images/profile-default.jpg"
                     className={styles.avatar}/>
-                <Typography component="div" variant="headline" className={styles.name}>{this.props.metadata.firstName} {this.props.metadata.lastName}</Typography>
-                <div className={styles.catchline}>{this.props.metadata.catchline}</div>
+                <Typography component="div" variant="headline" className={styles.name}>{this.renderName()}</Typography>
+                <div className={styles.catchline}>{this.renderCatchline()}</div>
               </div>
             </div>
-            <RaisedButtonMenu shrink={this.state.shrinkNav}/>
-            <ActionMenu shrink={this.state.shrinkNav}/>
+            <RaisedButtonMenu metadata={this.props.metadata} shrink={this.state.shrinkNav}/>
+            <ActionMenu metadata={this.props.metadata} shrink={this.state.shrinkNav}/>
             <Menu/>
           </div>
         </header>
@@ -58,7 +72,8 @@ class Header extends Component {
 
 // TypeChecking for properties
 Header.propTypes = {
-  text: PropTypes.string
+  text: PropTypes.string,
+  metadata: PropTypes.object
 };
 
 export default injectIntl(Header);

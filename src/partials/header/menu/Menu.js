@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import styles from './Menu.scss';
 import PropTypes from 'prop-types';
 import {FormattedMessage, injectIntl} from 'react-intl';
-import {Link} from 'react-router-dom';
 import IconButton from 'material-ui/IconButton';
 import Drawer from 'material-ui/Drawer';
 import List, {ListItem, ListItemIcon, ListItemText} from 'material-ui/List';
@@ -14,6 +13,8 @@ import PollIcon from 'material-ui-icons/Poll';
 import DraftsIcon from 'material-ui-icons/Drafts';
 import SchoolIcon from 'material-ui-icons/School';
 import StarIcon from 'material-ui-icons/Star';
+import { push } from 'react-router-redux';
+import {connect} from 'react-redux';
 
 class Menu extends Component {
   constructor(props) {
@@ -25,6 +26,11 @@ class Menu extends Component {
 
   handleClose = () => this.setState({open: false});
 
+  handleItemClick = (page) => {
+    console.log(page);
+    push(page);
+  };
+  
   render() {
     return (
         <nav id={styles.menu}>
@@ -37,53 +43,53 @@ class Menu extends Component {
                   onKeyDown={this.handleToggle}>
                  <div style={{width: 250}}>
                   <List>
-                    <ListItem button>
+                    <ListItem button onClick={() => this.props.goToPage('aboutme')}>
                       <ListItemIcon>
                         <AccountCircleIcon/>
                       </ListItemIcon>
-                      <Link to={"aboutme"}><ListItemText primary={<FormattedMessage id="lbl.home"/>} className="text"/></Link>
+                      <ListItemText primary={<FormattedMessage id="lbl.home"/>} className="text"/>
                     </ListItem>
                   </List>
                    <Divider/>
                    <List>
-                    <ListItem button>
+                    <ListItem button onClick={() => this.props.goToPage('work')}>
                       <ListItemIcon>
                         <WorkIcon/>
                       </ListItemIcon>
-                      <Link to={"work"}><ListItemText primary={<FormattedMessage id="lbl.work"/>}/></Link>
+                      <ListItemText primary={<FormattedMessage id="lbl.work"/>}/>
                     </ListItem>
-                    <ListItem button>
+                    <ListItem button onClick={() => this.props.goToPage('projects')}>
                       <ListItemIcon>
                         <ExtensionIcon/>
                       </ListItemIcon>
-                      <Link to={"projects"}><ListItemText primary={<FormattedMessage id="lbl.projects"/>}/></Link>
+                      <ListItemText primary={<FormattedMessage id="lbl.projects"/>}/>
                     </ListItem>
-                    <ListItem button>
+                    <ListItem button onClick={() => this.props.goToPage('skills')}>
                       <ListItemIcon>
                         <PollIcon/>
                       </ListItemIcon>
-                      <Link to={"skills"}><ListItemText primary={<FormattedMessage id="lbl.skills"/>}/></Link>
+                      <ListItemText primary={<FormattedMessage id="lbl.skills"/>}/>
                     </ListItem>
-                    <ListItem button>
+                    <ListItem button onClick={() => this.props.goToPage('education')}>
                       <ListItemIcon>
                         <SchoolIcon/>
                       </ListItemIcon>
-                      <Link to={"education"}><ListItemText primary={<FormattedMessage id="lbl.education"/>}/></Link>
+                      <ListItemText primary={<FormattedMessage id="lbl.education"/>}/>
                     </ListItem>
                    </List>
                    <Divider/>
                    <List>
-                    <ListItem button>
+                    <ListItem button onClick={() => this.props.goToPage('hobbies')}>
                       <ListItemIcon>
                         <StarIcon/>
                       </ListItemIcon>
-                      <Link to={"hobbies"}><ListItemText primary={<FormattedMessage id="lbl.hobbies"/>}/></Link>
+                      <ListItemText primary={<FormattedMessage id="lbl.hobbies"/>}/>
                     </ListItem>
-                    <ListItem button>
+                    <ListItem button onClick={() => this.props.goToPage('contact')}>
                       <ListItemIcon>
                         <DraftsIcon/>
                       </ListItemIcon>
-                      <Link to={"contact"}><ListItemText primary={<FormattedMessage id="lbl.contact"/>}/></Link>
+                      <ListItemText primary={<FormattedMessage id="lbl.contact"/>}/>
                     </ListItem>
                   </List>
                  </div>
@@ -99,4 +105,10 @@ Menu.propTypes = {
   text: PropTypes.string
 };
 
-export default injectIntl(Menu);
+
+export const goToPage = (page) => (dispatch) => {
+  return dispatch(push(page));
+};
+
+
+export default injectIntl(connect(null, {goToPage})(Menu));

@@ -19,7 +19,7 @@ class AboutMePage extends Component {
     return this.props.aboutme ? (
         <AboutMe text={this.props.aboutme.text}/>
     ) : (
-      <div>OOOPS</div>
+      <div>Loading</div>
     )
   }
 }

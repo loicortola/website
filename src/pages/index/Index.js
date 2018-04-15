@@ -12,6 +12,12 @@ class Index extends Component {
     super(props);
   }
 
+  sendMail() {
+    if (this.props.metadata) {
+      location.href = "mailto:" + this.props.metadata.email + '?subject=First%20Contact';
+    }
+  }
+
   render() {
     return (
         <div>
@@ -23,7 +29,7 @@ class Index extends Component {
           </div>
           <div className={style.bottomMenuContainer}>
             <div className={style.contactButtonContainer}>
-              <Button variant="fab" color="secondary" aria-label="add">
+              <Button variant="fab" color="secondary" aria-label="add" onClick={() => {this.sendMail()}}>
                 <EmailIcon/>
               </Button>
             </div>
@@ -36,7 +42,8 @@ class Index extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    location: state.router.location
+    location: state.router.location,
+    metadata: state.cv.metadata
   };
 };
 
