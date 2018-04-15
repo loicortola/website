@@ -23,4 +23,13 @@
   .left {
     text-align: left;
   }
+  
+  a {
+    text-decoration: none;
+    color: $primary-dark-color;
+    font-weight: bold;
+    &:hover {
+      color: $primary-color;
+    }
+  }
 }

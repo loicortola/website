@@ -2,33 +2,41 @@
   {
     "id": 5,
     "title": "Deadlock",
-    "description": "This is my biggest project right now.<br/>Deadlock will be the first OpenSource coding & hacking game platform. <br/>Our goal? Simply reinvent the way people learn computer-science, and the way we get our new recruits. <br/>The project is a year-long project and should be Opensourced before the end of year 2017.<br/> Want to take part in the project? Message me!<br/><br/>Tech Stack: Java 8, Spring Boot, JavaFX, Docker, Ansible, React.js, Redux",
-    "website": "https://www.deadlock.io"
+    "description": "This is my biggest project right now.  **Deadlock** will be the first OpenSource **coding & hacking game** platform.  Our goal? Simply reinvent the way people learn computer-science, and the way we get our new recruits.  \r\nThe project is a year-long project and should be OpenSourced before the end of year 2018.  \r\n\r\n![Deadlock player dashboard](images/deadlock-1.jpg)![Deadlock story hall](images/deadlock-2.jpg)  \r\n\r\nWant to take part in the project? **Message me**!",
+    "website": "https://github.com/resourcepool",
+    "skills": ["Java", "JavaFX", "Spring Boot", "Docker", "Orchestration", "DevOps", "Ansible", "React.js", "Redux", "Webpack", "SASS"],
+    "logo": "deadlock-logo.png"
   },
   {
     "id": 4,
     "title": "Student Trainings",
-    "description": "How to get better at programming Java applications.<br />This training material was carefully setup to enable university-level students to transcend their level in Java, Performance Tuning, Continuous Delivery, TDD, and Front end development.\n<br/>Many projects have been released:\n<br/><a href=\"https://github.com/resourcepool/training-welcomepool\" target=\"_blank\">Code Review Scheduler (2 weeks)</a>\n<br /><a href=\"https://github.com/resourcepool/training-welcomepool-2\" target=\"_blank\">MOTM (2 weeks)</a>\n<br/><a href=\"https://github.com/resourcepool/training-java\" target=\"_blank\">Computer-database (2 months)</a>",
-    "website": "https://github.com/resourcepool"
+    "description": "How to get better at programming Java applications.  \r\nThis training material was carefully setup to enable university-level students to get back in touch with their basic java and JEE skills. It is designed to be served as a hackathon.  \r\nMany projects have been released:  \r\n[Code Review Scheduler (1 week)](https://github.com/resourcepool/training-welcomepool)  \r\n[Mood of the Month (1 week)](https://github.com/resourcepool/training-welcomepool-2)  \r\n[Room booking app (2 weeks)](https://github.com/resourcepool/training-welcomepool-3)  \r\n[CV administration app (2 weeks)](https://github.com/resourcepool/training-welcomepool-cv)  \r\n\r\n![Training Code Review scheduler](images/training-welcomepool.jpg)",
+    "website": "https://github.com/resourcepool",
+    "skills": ["Java", "JEE", "HTML5", "CSS3", "Git"]
   },
   {
     "id": 3,
-    "title": "Training Material & Samples",
-    "description": "Handson trainings & sample projects:\n<br/><a href=\"https://github.com/resourcepool/handson-android\" target=\"_blank\">Android</a>\n<br/><a href=\"https://github.com/resourcepool/handson-your-delivery-pipeline\" target=\"_blank\">Docker & CD</a>"
+    "title": "Little Bob",
+    "description": "Random name and sentence generator for Java (english and french):  \r\n[Check it out here](https://github.com/resourcepool/little-bob)!",
+    "skills": ["Java"]
   },
   {
     "id": 2,
     "title": "IOT Projects",
-    "description": "JSON RPC 2.0 Java Client: \n<br/>Check it out on: <a href=\"https://github.com/resourcepool/jarpic-client\" target=\"_blank\">https://github.com/resourcepool/jarpic-client</a>\n<br/>Low-level Node-API like LUA Http-Server for NodeMCU & ESP-8266 Microcontrollers:\n<br/>Check it out on: <a href=\"https://github.com/loicortola/nodemcu-espress\" target=\"_blank\">https://github.com/loicortola/nodemcu-espress</a>\n<br/>End-to-end Led Controller middleware + Android app for NodeMCU & ESP-8266 Microcontrollers:\n<br/>Check it out on: <a href=\"https://github.com/loicortola/led-controller\" target=\"_blank\">https://github.com/loicortola/led-controller</a>!"
+    "description": "I'm starting to get passioned about IoT. Therefore, I started doing a few libs and other stuff to help during personal projects.  \r\n #### **SSDP** Java Client:  \r\nIt was hard to find a good implementation for SSDP on the web, so I made my own. Asynchronous, lightweight, and bullet-proof. [See it here](https://github.com/resourcepool/ssdp-client).  \r\n #### **JSON-RPC 2.0** Java client:  \r\nA lightweight full implementation of JSON-RPC 2.0 in Java. Compatible with Java 6 and above. Available on central. [Let's see it](https://github.com/resourcepool/jarpic-client)  \r\n #### LUA Http-server for **NodeMCU** & **ESP-8266** microcontrollers:  \r\nLow-level, memory-efficient, node-like API & middleware compatible. [Let's see it](https://github.com/loicortola/nodemcu-espress)  \r\n #### End-to-end **5050 Led Controller**:  \r\nPCB Board + Hardware list + Firmware + Android app.  \r\nGreat to learn how to make IoT objects and get some awesome sample code running. Now currently working on bigger API refactorings to be compatible with Xiaomi devices and on a Zigbee Light Link implementation with NXP microcontrollers. [See it here](https://github.com/loicortola/led-controller)  \r\n\r\n![Remote Control App for my custom LED Controller](images/ledcontroller-remote-app-sm.jpg)![Custom-made PCB v1 and v2 for my custom LED Controller](images/ledcontroller-pcb-sm.jpg)",
+    "skills": ["IoT", "C++", "PCB", "LUA", "Java", "Android"]
   },
   {
     "id": 1,
-    "title": "Little Bob",
-    "description": "Name and sentence generator for Java: \n<br/>Check it out on: <a href=\"https://github.com/resourcepool/little-bob\" target=\"_blank\">https://github.com/resourcepool/little-bob</a>!"
+    "title": "Training Material & Samples",
+    "description": "Handson trainings & sample projects:  \r\n[Android Training](https://github.com/resourcepool/handson-android)  \r\n[DevOps, Docker & CI/CD](https://github.com/resourcepool/handson-your-delivery-pipeline)",
+    "skills": ["Java", "Android", "DevOps", "CI"]
   },
   {
     "id": 6,
-    "title": "Contributions",
-    "description": "Contributing to a few open source projects: Android Libraries, Gulp libraries, NodeMCU library, Spotify Java API for Docker, Dashboard TV, and many more."
+    "title": "Other",
+    "description": "Contributing to a few open source projects: Android Libraries, Gulp libraries, NodeMCU library, Spotify Java API for Docker, Dashboard TV, and many more.",
+    "skills": ["Java", "Android", "IoT"],
+    "website": "https://github.com/loicortola"
   }
 ]

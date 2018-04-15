@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import work from "./pages/work";
 import contact from "./pages/contact";
 import aboutme from "./pages/aboutme";
+import projects from "./pages/projects";
 import {connect} from 'react-redux';
 
 class Routes extends Component {
@@ -17,6 +18,7 @@ class Routes extends Component {
           <Route path="/aboutme" component={aboutme.components.AboutMePage}/>
           <Route path="/contact" component={contact.components.ContactPage}/>
           <Route path="/work" component={work.components.WorkPage}/>
+          <Route path="/projects" component={projects.components.ProjectsPage}/>
           <Redirect exact from="/" to="/aboutme" />
         </Switch>
     )

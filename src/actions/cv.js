@@ -58,3 +58,22 @@ const loadWorkAsync = () => ({
 export const loadWork = () => (dispatch) => {
   return dispatch(loadWorkAsync());
 };
+
+/*------------------------------------------------------------------------------------------
+ * Loads PROJECTS
+ *-----------------------------------------------------------------------------------------*/
+export const LOAD_PROJECTS_REQUEST = 'LOAD_PROJECTS_REQUEST';
+export const LOAD_PROJECTS_SUCCESS = 'LOAD_PROJECTS_SUCCESS';
+export const LOAD_PROJECTS_FAILURE = 'LOAD_PROJECTS_FAILURE';
+
+const loadProjectsAsync = () => ({
+  [CALL_API]: {
+    types: [ LOAD_PROJECTS_REQUEST, LOAD_PROJECTS_SUCCESS, LOAD_PROJECTS_FAILURE ],
+    endpoint: `projects.json`,
+    method: 'GET'
+  }
+});
+
+export const loadProjects = () => (dispatch) => {
+  return dispatch(loadProjectsAsync());
+};

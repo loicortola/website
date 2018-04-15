@@ -17,6 +17,9 @@ const profile = (state = {}, action) => {
     case ActionTypes.LOAD_WORK_SUCCESS:
       return merge({}, state, {work: action.result});
 
+    case ActionTypes.LOAD_PROJECTS_SUCCESS:
+      return merge({}, state, {projects: action.result});
+
   }
   return state;
 };
