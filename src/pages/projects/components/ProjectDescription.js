@@ -23,7 +23,7 @@ function ProjectDescription(props) {
 
   return (
       <Component className={classNames(classes.root, classNameProp)}>
-        <ReactMarkdown source={description}/>
+        <ReactMarkdown source={description} />
       </Component>
   );
 }

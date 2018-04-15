@@ -1,3 +1,4 @@
+@import "../../../theme/abstracts/media";
 
 .card {
   margin: 10px;
@@ -9,6 +10,16 @@
 
 .techenv {
   padding: 10px 40px 15px;
+}
+
+
+@media #{$handheld} {
+  .card {
+    margin: 10px -10px;
+  }
+  .techenv {
+    padding: 10px 20px 15px;
+  }
 }
 
 .skills {
