@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import {FormattedMessage, defineMessages, injectIntl} from 'react-intl';
+import styles from './AboutMe.scss';
 
 class AboutMe extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class AboutMe extends Component {
 
   render() {
     return (
-        <ReactMarkdown source={this.props.text}/>
+        <ReactMarkdown className="markdown-container" source={this.props.text}/>
     );
   }
 }

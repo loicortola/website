@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {injectIntl} from 'react-intl';
 import Skill from '../../../partials/skill/Skill';
-import Card, {CardActions, CardContent} from 'material-ui/Card';
+import Card, {CardContent} from 'material-ui/Card';
 import WorkXPHeader from '../components/WorkXPHeader';
 import WorkXPDescription from '../components/WorkXPDescription';
 import Avatar from 'material-ui/Avatar';

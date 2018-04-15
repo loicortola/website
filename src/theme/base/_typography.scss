@@ -13,6 +13,10 @@ body {
   color: black;
 }
 
+pre {
+  font-family: $font-family;
+}
+
 .headline {
     font-size: $text-size-xl;
     font-weight: $font-weight-normal;
