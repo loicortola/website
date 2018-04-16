@@ -20,6 +20,9 @@ const profile = (state = {}, action) => {
     case ActionTypes.LOAD_PROJECTS_SUCCESS:
       return merge({}, state, {projects: action.result});
 
+    case ActionTypes.LOAD_INSTAGRAM_SUCCESS:
+      return merge({}, state, {instagram: action.result});
+
   }
   return state;
 };

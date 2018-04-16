@@ -77,3 +77,23 @@ const loadProjectsAsync = () => ({
 export const loadProjects = () => (dispatch) => {
   return dispatch(loadProjectsAsync());
 };
+
+
+/*------------------------------------------------------------------------------------------
+ * Loads INSTAGRAM
+ *-----------------------------------------------------------------------------------------*/
+export const LOAD_INSTAGRAM_REQUEST = 'LOAD_INSTAGRAM_REQUEST';
+export const LOAD_INSTAGRAM_SUCCESS = 'LOAD_INSTAGRAM_SUCCESS';
+export const LOAD_INSTAGRAM_FAILURE = 'LOAD_INSTAGRAM_FAILURE';
+
+const loadInstagramAsync = () => ({
+  [CALL_API]: {
+    types: [ LOAD_INSTAGRAM_REQUEST, LOAD_INSTAGRAM_SUCCESS, LOAD_INSTAGRAM_FAILURE ],
+    endpoint: `instagram.json`,
+    method: 'GET'
+  }
+});
+
+export const loadInstagram = () => (dispatch) => {
+  return dispatch(loadInstagramAsync());
+};

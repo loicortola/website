@@ -13,6 +13,7 @@ import PollIcon from 'material-ui-icons/Poll';
 import DraftsIcon from 'material-ui-icons/Drafts';
 import SchoolIcon from 'material-ui-icons/School';
 import StarIcon from 'material-ui-icons/Star';
+import PhotoIcon from 'material-ui-icons/Photo';
 import { push } from 'react-router-redux';
 import {connect} from 'react-redux';
 
@@ -64,32 +65,14 @@ class Menu extends Component {
                       </ListItemIcon>
                       <ListItemText primary={<FormattedMessage id="lbl.projects"/>}/>
                     </ListItem>
-                    <ListItem button onClick={() => this.props.goToPage('skills')}>
-                      <ListItemIcon>
-                        <PollIcon/>
-                      </ListItemIcon>
-                      <ListItemText primary={<FormattedMessage id="lbl.skills"/>}/>
-                    </ListItem>
-                    <ListItem button onClick={() => this.props.goToPage('education')}>
-                      <ListItemIcon>
-                        <SchoolIcon/>
-                      </ListItemIcon>
-                      <ListItemText primary={<FormattedMessage id="lbl.education"/>}/>
-                    </ListItem>
                    </List>
                    <Divider/>
                    <List>
-                    <ListItem button onClick={() => this.props.goToPage('hobbies')}>
+                    <ListItem button onClick={() => this.props.goToPage('photo')}>
                       <ListItemIcon>
-                        <StarIcon/>
+                        <PhotoIcon/>
                       </ListItemIcon>
-                      <ListItemText primary={<FormattedMessage id="lbl.hobbies"/>}/>
-                    </ListItem>
-                    <ListItem button onClick={() => this.props.goToPage('contact')}>
-                      <ListItemIcon>
-                        <DraftsIcon/>
-                      </ListItemIcon>
-                      <ListItemText primary={<FormattedMessage id="lbl.contact"/>}/>
+                      <ListItemText primary={<FormattedMessage id="lbl.photo"/>}/>
                     </ListItem>
                   </List>
                  </div>

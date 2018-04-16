@@ -7,6 +7,7 @@ export default {
     "lbl.projects": "Projects",
     "lbl.hobbies": "Hobbies",
     "lbl.skills": "Skills",
-    "lbl.work": "Work"
+    "lbl.work": "Work",
+    "lbl.photo": "Photography"
   }
 }

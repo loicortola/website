@@ -1,5 +1,5 @@
-import ContactPage from './ContactPage';
+import PhotoPage from './PhotoPage';
 
 export {
-  ContactPage
+  PhotoPage
 };
