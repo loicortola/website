@@ -2,8 +2,9 @@
 @import "../../../theme/abstracts/dimens";
 @import "../../../theme/abstracts/variables";
 
-$big-photo: 256px;
-$small-photo: 128px;
+$big-photo: 192px;
+$small-photo: 96px;
+$medium-photo: 128px;
 
 .photoContainer {
   width: $big-photo;
@@ -76,6 +77,16 @@ $small-photo: 128px;
 
 
 @media #{$handheld} {
+  .photoContainer {
+    width: $medium-photo;
+    height: $medium-photo;
+  }
+  .description {
+    visibility: hidden;
+  }
+}
+
+@media #{$small-handheld} {
   .photoContainer {
     width: $small-photo;
     height: $small-photo;
