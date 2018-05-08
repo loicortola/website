@@ -69,7 +69,11 @@ module.exports = (params) => ({
     ...((params && params.analysis) ? [ new BundleAnalyzerPlugin()] : []),
     new CopyWebpackPlugin(
         [
-          { from: path.join(staticSourcePath, 'images'), to: path.join(distPath, 'images')}
+          { from: path.join(staticSourcePath, 'images'), to: path.join(distPath, 'images')},
+          { from: path.join(staticSourcePath, 'privacy-policy.html'), to: path.join(distPath)},
+          { from: path.join(staticSourcePath, 'terms-and-conditions.html'), to: path.join(distPath)},
+          { from: path.join(staticSourcePath, 'robots.txt'), to: path.join(distPath)},
+          { from: path.join(staticSourcePath, 'sitemap.xml'), to: path.join(distPath)},
         ]
     ),
     // Copy html files and resources to destination, minify

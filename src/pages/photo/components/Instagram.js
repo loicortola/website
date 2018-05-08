@@ -12,6 +12,9 @@ class Instagram extends Component {
     if (!this.props.data.description) {
       return '';
     }
+    if (this.props.data.description.length <= 48) {
+      return this.props.data.description;
+    }
     // Take 8 first words
     let descr = this.props.data.description.substr(0, 48);
     return descr.substr(0, descr.lastIndexOf(" ")) + '...';
@@ -29,7 +32,7 @@ class Instagram extends Component {
               <div className={styles.likeContainer}>
                 <span className={styles.helper}></span>
                 <LikeIcon className={styles.likeIcon}/>
-                <div className={styles.likeValue}>{this.props.data.numberLikes}</div>
+                <div className={styles.likeValue}>{this.props.data.numberLike}</div>
               </div>
               <div className={styles.description}>{this.renderDescription()}</div>  
             </div>
