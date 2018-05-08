@@ -17,7 +17,7 @@ class PhotoPage extends Component {
   getPhotos() {
     let result = [];
     for (let k in Object.keys(this.props.instagram.posts)) {
-      result.push(<Photo data={this.props.instagram.posts[k]} key={k}/>);
+      result.push(<Photo data={this.props.instagram.posts[k]} id={k} key={k}/>);
     }
     return result;
   }
