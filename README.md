@@ -1,5 +1,11 @@
 # Personal Website
 
+[![Build Status](https://travis-ci.org/loicortola/website.svg?branch=master)](https://travis-ci.org/loicortola/website)
+
+This website is using Webpack, React 16, React-Router 4, Redux, SASS & CSS Modules
+
+It is built using travis-ci and deployed via Ansible on the main server [www.loicortola.com](https://www.loicortola.com)
+
 ## 1. Development Environment
 
 To develop, either use 
