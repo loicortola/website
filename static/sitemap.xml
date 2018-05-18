@@ -32,26 +32,26 @@
   </url>
   <!-- TODO should be generated from metadata.json in future webapp -->
   <url>
-    <loc>https://www.youtube.com/watch?v=wN-UjP7GCmg</loc>
+    <loc>https://www.loicortola.com/video/1</loc>
     <video:video>
       <video:thumbnail_loc>https://www.loicortola.com/images/devoxx-maps-haute-perf.jpg</video:thumbnail_loc>
       <video:title>Maps performing under high load</video:title>
       <video:description>Talking about high-performance and load-testing of map services at the Devoxx France 2018
         (FR)
       </video:description>
-      <video:content_loc>https://www.loicortola.com.com/video/1</video:content_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=wN-UjP7GCmg</video:content_loc>
       <video:player_loc autoplay="ap=1">https://www.youtube.com/watch?v=wN-UjP7GCmg</video:player_loc>
       <video:duration>2399</video:duration>
       <video:rating>4.8</video:rating>
     </video:video>
   </url>
   <url>
-    <loc>https://www.youtube.com/watch?v=HkHkM_leYE8</loc>
+    <loc>https://www.loicortola.com/video/2</loc>
     <video:video>
       <video:thumbnail_loc>https://www.loicortola.com/images/conf-web-sa-vie-son-oeuvre.jpg</video:thumbnail_loc>
       <video:title>The amazing tale of the web</video:title>
       <video:description>Retrace the amazing tale of the web from its genesis to 2020 (FR)</video:description>
-      <video:content_loc>https://www.loicortola.com.com/video/2</video:content_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=wN-UjP7GCmg</video:content_loc>
       <video:player_loc autoplay="ap=1">https://www.youtube.com/watch?v=HkHkM_leYE8</video:player_loc>
       <video:duration>2977</video:duration>
       <video:rating>5.0</video:rating>
