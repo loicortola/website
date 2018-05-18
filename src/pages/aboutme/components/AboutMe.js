@@ -11,7 +11,10 @@ class AboutMe extends Component {
 
   render() {
     return (
-        <ReactMarkdown className="markdown-container" source={this.props.text}/>
+        <div className={styles.container}>
+          <ReactMarkdown className="markdown-container" source={this.props.text}/>  
+        </div>
+        
     );
   }
 }

@@ -17,7 +17,7 @@
     }
   },
   "media": [
-    {"id": 1, "type": "VIDEO", "title": "Maps performing under high load", "thumbnail": "devoxx-maps-haute-perf.jpg", "link": "https://www.youtube.com/watch?v=wN-UjP7GCmg", "description": "Talking about high-performance and load-testing of map services at the Devoxx France 2018 (FR)", "duration": 2399},
+    {"id": 1, "type": "VIDEO", "title": "Maps performing under high load", "thumbnail": "http://i1.ytimg.com/vi/wN-UjP7GCmg/maxresdefault.jpg", "link": "https://www.youtube.com/watch?v=wN-UjP7GCmg", "description": "Talking about high-performance and load-testing of map services at the Devoxx France 2018 (FR)", "duration": 2399},
     {"id": 2, "type": "VIDEO", "title": "The amazing tale of the web", "thumbnail": "conf-web-sa-vie-son-oeuvre.jpg", "link": "https://www.youtube.com/watch?time_continue=1092&v=HkHkM_leYE8", "description": "Retrace the amazing tale of the web from its genesis to 2020 (FR)"}
   ]
 }

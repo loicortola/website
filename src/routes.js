@@ -6,6 +6,7 @@ import contact from "./pages/contact";
 import aboutme from "./pages/aboutme";
 import projects from "./pages/projects";
 import photo from "./pages/photo";
+import video from "./pages/video";
 import {connect} from 'react-redux';
 
 class Routes extends Component {
@@ -21,6 +22,7 @@ class Routes extends Component {
           <Route path="/work" component={work.components.WorkPage}/>
           <Route path="/projects" component={projects.components.ProjectsPage}/>
           <Route path="/photo" component={photo.components.PhotoPage}/>
+          <Route path="/video/:videoId" component={video.components.VideoPage}/>
           <Redirect exact from="/" to="/aboutme" />
         </Switch>
     )

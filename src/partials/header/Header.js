@@ -55,7 +55,7 @@ class Header extends Component {
             <div id={styles.headerMetaContainer}>
               <div id={styles.metadata}>
                 <Avatar
-                    src="images/profile-default.jpg"
+                    src="/images/profile-default.jpg"
                     className={styles.avatar}/>
                 <Typography component="div" variant="headline" className={styles.name}>{this.renderName()}</Typography>
                 <div className={styles.catchline}>{this.renderCatchline()}</div>

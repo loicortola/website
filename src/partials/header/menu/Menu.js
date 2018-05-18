@@ -44,7 +44,7 @@ class Menu extends Component {
                   onKeyDown={this.handleToggle}>
                  <div style={{width: 250}}>
                   <List>
-                    <ListItem button onClick={() => this.props.goToPage('aboutme')}>
+                    <ListItem button onClick={() => this.props.goToPage('/aboutme')}>
                       <ListItemIcon>
                         <AccountCircleIcon/>
                       </ListItemIcon>
@@ -53,13 +53,13 @@ class Menu extends Component {
                   </List>
                    <Divider/>
                    <List>
-                    <ListItem button onClick={() => this.props.goToPage('work')}>
+                    <ListItem button onClick={() => this.props.goToPage('/work')}>
                       <ListItemIcon>
                         <WorkIcon/>
                       </ListItemIcon>
                       <ListItemText primary={<FormattedMessage id="lbl.work"/>}/>
                     </ListItem>
-                    <ListItem button onClick={() => this.props.goToPage('projects')}>
+                    <ListItem button onClick={() => this.props.goToPage('/projects')}>
                       <ListItemIcon>
                         <ExtensionIcon/>
                       </ListItemIcon>
@@ -68,7 +68,7 @@ class Menu extends Component {
                    </List>
                    <Divider/>
                    <List>
-                    <ListItem button onClick={() => this.props.goToPage('photo')}>
+                    <ListItem button onClick={() => this.props.goToPage('/photo')}>
                       <ListItemIcon>
                         <PhotoIcon/>
                       </ListItemIcon>

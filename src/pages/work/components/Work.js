@@ -57,7 +57,7 @@ class Work extends Component {
                 endDate={this.props.experience.endDate}
             />
             <Divider/>
-            <CardContent>
+            <CardContent className={styles.cardContent}>
               {this.getExperienceDescription(this.props.experience)}
             </CardContent>
             <Divider/>

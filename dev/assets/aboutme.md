@@ -33,7 +33,8 @@ Most of my current OpenSource contributions are detailed in the Projects page.
 Interested in what we do? Shoot me an email and let's discuss it.
 
 ```
-"The best way to learn? Teach."  
+"The best way to learn? 
+Teach."  
 Frank Oppenheimer
 ```
 

@@ -1,0 +1,61 @@
+@import "../../../theme/abstracts/media";
+@import "../../../theme/abstracts/dimens";
+@import "../../../theme/abstracts/palette";
+
+.container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.flex {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.media {
+  max-width: 300px;
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 4px;
+  &:hover {
+    cursor: pointer;
+    > .descriptionContainer {
+      visibility: visible;
+    }
+  }
+}
+
+.icon {
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 56px !important;
+  height: 56px !important;
+}
+
+.thumbnail {
+  max-width: 300px;
+}
+
+.descriptionContainer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  visibility: hidden;
+  background-color: #FFFFFFBB;
+  
+}
+
+.description {
+  position: absolute;
+  top: calc(50% - 0.6em);
+  left: 10px;
+  width: calc(100% - 20px);
+  text-align: center;
+}
