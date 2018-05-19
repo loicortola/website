@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import { IntlProvider } from 'react-intl-redux';
-import { MuiThemeProvider } from 'material-ui/styles';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 import DevTools from './index/dev/DevTools';
 import theme from '../theme/theme';
 import ReactGA from 'react-ga';
@@ -13,12 +13,9 @@ import Routes from '../routes';
 import Index from './index/Index';
 // History
 import history from '../store/history';
+import getConfig from 'next/config';
 
-const conf = {
-  gaTrackingId: Config
-    ? Config.gaTrackingId
-    : process.env.REACT_APP_GA_TRACKING_ID
-};
+const conf = getConfig().publicRuntimeConfig;
 
 class Root extends Component {
   constructor(props) {

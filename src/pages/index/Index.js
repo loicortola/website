@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Footer, Header } from '../../partials/components';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Paper from 'material-ui/Paper';
-import Button from 'material-ui/Button';
-import EmailIcon from 'material-ui-icons/Email';
+import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
+import EmailIcon from '@material-ui/icons/Email';
 import style from './Index.scss';
 import ReactGA from 'react-ga';
 

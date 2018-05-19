@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import styles from './RaisedButtonsMenu.scss';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
-import Button from 'material-ui/Button';
-import LocationIcon from 'material-ui-icons/LocationOn';
-import EmailIcon from 'material-ui-icons/Email';
-import AttachmentIcon from 'material-ui-icons/Attachment';
+import Button from '@material-ui/core/Button';
+import LocationIcon from '@material-ui/icons/LocationOn';
+import EmailIcon from '@material-ui/icons/Email';
+import AttachmentIcon from '@material-ui/icons/Attachment';
 import ReactGA from 'react-ga';
 
 class RaisedButtonsMenu extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Typography from 'material-ui/Typography';
+import Typography from '@material-ui/core/Typography';
 import Youtube from '../components/YoutubePlayer';
 import styles from './VideoPage.scss';
 import PropTypes from 'prop-types';

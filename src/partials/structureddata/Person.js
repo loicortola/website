@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import getConfig from 'next/config';
 
-const conf = {
-  // eslint-disable-next-line
-  websiteUrl: Config ? Config.websiteUrl : process.env.REACT_APP_WEBSITE_URL
-};
+const conf = getConfig().publicRuntimeConfig;
 
 function Person(props) {
   function getSocialNetworkLinks(networks) {
@@ -32,7 +30,7 @@ function Person(props) {
     '@type': 'Person',
     name: props.metadata.firstName + ' ' + props.metadata.lastName,
     url: conf.websiteUrl,
-    logo: conf.websiteUrl + '/images/profile-default.png',
+    logo: conf.websiteUrl + '/static/images/profile-default.png',
     sameAs: getSocialNetworkLinks(props.metadata.social)
   };
 

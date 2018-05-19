@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import Skill from '../../../partials/skill/Skill';
-import Card, { CardContent } from 'material-ui/Card';
+import Card, { CardContent } from '@material-ui/core/Card';
 import WorkXPHeader from '../components/WorkXPHeader';
 import WorkXPDescription from '../components/WorkXPDescription';
-import Avatar from 'material-ui/Avatar';
-import IconButton from 'material-ui/IconButton';
-import Typography from 'material-ui/Typography';
-import MoreVertIcon from 'material-ui-icons/MoreVert';
-import Divider from 'material-ui/Divider';
+import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Divider from '@material-ui/core/Divider';
 
 import styles from './Work.scss';
 
@@ -52,7 +52,7 @@ class Work extends Component {
               <Avatar
                 aria-label="Recipe"
                 className={styles.avatar}
-                src={'/images/' + this.props.experience.company.logo}
+                src={'/static/images/' + this.props.experience.company.logo}
               />
             }
             action={

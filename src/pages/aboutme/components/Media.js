@@ -4,8 +4,8 @@ import { injectIntl } from 'react-intl';
 import styles from './Media.scss';
 import { push } from 'react-router-redux';
 import { connect } from 'react-redux';
-import Typography from 'material-ui/Typography';
-import PlayIcon from 'material-ui-icons/PlayArrow';
+import Typography from '@material-ui/core/Typography';
+import PlayIcon from '@material-ui/icons/PlayArrow';
 import ReactGA from 'react-ga';
 
 class Media extends Component {
@@ -17,7 +17,7 @@ class Media extends Component {
     if (video.thumbnail.indexOf('http') >= 0) {
       return video.thumbnail;
     }
-    return '/images/' + video.thumbnail;
+    return '/static/images/' + video.thumbnail;
   }
 
   onVideoClick(id) {

@@ -2,11 +2,9 @@
 import axios from 'axios';
 import { normalize } from 'normalizr';
 
-const conf = {
-  // eslint-disable-next-line
-  apiBaseUrl: Config ? Config.apiBaseUrl : process.env.REACT_APP_API_BASE_URL
-};
+import getConfig from 'next/config';
 
+const conf = getConfig().publicRuntimeConfig;
 
 const callApi = (endpoint, method, schema, store, headers, body) => {
   console.log('Will call api with endpoint', endpoint, 'and method', method);

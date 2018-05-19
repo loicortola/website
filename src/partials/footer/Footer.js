@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './Footer.scss';
-import Typography from 'material-ui/Typography';
+import Typography from '@material-ui/core/Typography';
 import { FormattedMessage, injectIntl } from 'react-intl';
 
 class Footer extends Component {

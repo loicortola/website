@@ -5,7 +5,7 @@ import TwitterIcon from './Twitter';
 import LinkedInIcon from './LinkedIn';
 import GithubIcon from './Github';
 import InstagramIcon from './Instagram';
-import Button from 'material-ui/Button';
+import Button from '@material-ui/core/Button';
 import ReactGA from 'react-ga';
 
 class ActionMenu extends Component {

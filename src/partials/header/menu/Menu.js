@@ -3,14 +3,17 @@ import React, { Component } from 'react';
 import styles from './Menu.scss';
 import PropTypes from 'prop-types';
 import { FormattedMessage, injectIntl } from 'react-intl';
-import IconButton from 'material-ui/IconButton';
-import Drawer from 'material-ui/Drawer';
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
-import Divider from 'material-ui/Divider';
-import AccountCircleIcon from 'material-ui-icons/AccountCircle';
-import ExtensionIcon from 'material-ui-icons/Extension';
-import WorkIcon from 'material-ui-icons/Work';
-import PhotoIcon from 'material-ui-icons/Photo';
+import IconButton from '@material-ui/core/IconButton';
+import Drawer from '@material-ui/core/Drawer';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Divider from '@material-ui/core/Divider';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ExtensionIcon from '@material-ui/icons/Extension';
+import WorkIcon from '@material-ui/icons/Work';
+import PhotoIcon from '@material-ui/icons/Photo';
 import { push } from 'react-router-redux';
 import { connect } from 'react-redux';
 
@@ -39,8 +42,7 @@ class Menu extends Component {
             tabIndex={0}
             role="button"
             onClick={this.handleToggle}
-            onKeyDown={this.handleToggle}
-          >
+            onKeyDown={this.handleToggle}>
             <div style={{ width: 250 }}>
               <List>
                 <ListItem

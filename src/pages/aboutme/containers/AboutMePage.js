@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import AboutMe from '../components/AboutMe';
 import Media from '../components/Media';
 import Person from '../../../partials/structureddata/Person';
-import Divider from 'material-ui/Divider';
+import Divider from '@material-ui/core/Divider';
 import { connect } from 'react-redux';
 import { loadAboutMe } from '../../../actions/cv';
 

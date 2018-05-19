@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import styles from './Header.scss';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
-import Avatar from 'material-ui/Avatar';
+import Avatar from '@material-ui/core/Avatar';
 import Menu from './menu/Menu';
 import ActionMenu from './actionmenu/ActionMenu';
 import RaisedButtonMenu from './raisedbuttonsmenu/RaisedButtonsMenu';
-import Typography from 'material-ui/Typography';
+import Typography from '@material-ui/core/Typography';
 import classNames from 'classnames';
 
 class Header extends Component {
   constructor(props) {
     super(props);
-    if (window) {
+    if (process.browser) {
       window.onscroll = () => {
         this.changeNav();
       };
@@ -71,7 +71,7 @@ class Header extends Component {
           <div id={styles.headerMetaContainer}>
             <div id={styles.metadata}>
               <Avatar
-                src="/images/profile-default.jpg"
+                src="/static/images/profile-default.jpg"
                 className={styles.avatar}
               />
               <Typography

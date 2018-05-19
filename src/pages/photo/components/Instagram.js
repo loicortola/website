@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import styles from './Instagram.scss';
-import LikeIcon from 'material-ui-icons/Favorite';
+import LikeIcon from '@material-ui/icons/Favorite';
 import ReactGA from 'react-ga';
 
 class Instagram extends Component {
