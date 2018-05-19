@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {Provider} from 'react-redux';
-import {Redirect, Route, Switch} from 'react-router-dom';
 import {ConnectedRouter} from 'react-router-redux';
 import {IntlProvider} from 'react-intl-redux';
 import {MuiThemeProvider} from 'material-ui/styles';
@@ -21,17 +20,19 @@ class Root extends Component {
 
   render() {
     return (
-        <Provider store={this.props.store}>
-          <MuiThemeProvider theme={theme}>
-            <IntlProvider locale="en">
-              <ConnectedRouter history={history.history}>
-                <Index>
-                  <Routes/>
-                </Index>
-              </ConnectedRouter>
-            </IntlProvider>
-          </MuiThemeProvider>
-        </Provider>
+        <Fragment>
+          <Provider store={this.props.store}>
+            <MuiThemeProvider theme={theme}>
+              <IntlProvider locale="en">
+                <ConnectedRouter history={history.history}>
+                  <Index>
+                    <Routes/>
+                  </Index>
+                </ConnectedRouter>
+              </IntlProvider>
+            </MuiThemeProvider>
+          </Provider>
+        </Fragment>
     );
   }
 }

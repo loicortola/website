@@ -37,7 +37,6 @@ class Media extends Component {
       return (<div></div>)
     }
     let results = [];
-    console.log(this.props.media);
     for (let i = this.props.media.length - 1; i >= Math.max(this.props.media.length - 4, 0); i--) {
       let media = this.props.media[i];
       if (media.type === "VIDEO") {

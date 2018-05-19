@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {NavLink} from 'react-router';
 import AboutMe from '../components/AboutMe';
 import Media from '../components/Media';
+import Person from '../../../partials/structureddata/Person';
 import Divider from 'material-ui/Divider';
 import {connect} from 'react-redux';
 import {loadAboutMe} from '../../../actions/cv';
@@ -29,6 +30,7 @@ class AboutMePage extends Component {
           <AboutMe text={this.props.aboutme.text}/>
           <Divider/>
           <Media media={this.props.metadata.media}/>
+          <Person metadata={this.props.metadata}/>
         </div>
     )
   }
