@@ -5,6 +5,7 @@ import Paper from 'material-ui/Paper';
 import Button from 'material-ui/Button';
 import EmailIcon from 'material-ui-icons/Email';
 import style from './Index.scss';
+import ReactGA from 'react-ga';
 
 class Index extends Component {
 
@@ -13,6 +14,10 @@ class Index extends Component {
   }
 
   sendMail() {
+    ReactGA.event({
+      category: 'Contact',
+      action: 'Clicked on Contact FAB'
+    });
     if (this.props.metadata) {
       location.href = "mailto:" + this.props.metadata.email + '?subject=First%20Contact';
     }

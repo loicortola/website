@@ -6,6 +6,7 @@ import Button from 'material-ui/Button';
 import LocationIcon from 'material-ui-icons/LocationOn';
 import EmailIcon from 'material-ui-icons/Email';
 import AttachmentIcon from 'material-ui-icons/Attachment';
+import ReactGA from 'react-ga';
 
 class RaisedButtonsMenu extends Component {
   constructor(props) {
@@ -20,9 +21,20 @@ class RaisedButtonsMenu extends Component {
   }
 
   sendMail() {
+    ReactGA.event({
+      category: 'Contact',
+      action: 'Clicked on contact'
+    });
     if (this.props.metadata) {
       location.href = "mailto:" + this.props.metadata.email + '?subject=First%20Contact';
     }
+  }
+  
+  showPrintable() {
+    ReactGA.event({
+      category: 'Prospection',
+      action: 'Tried to print Resume'
+    });
   }
 
   render() {
@@ -36,7 +48,7 @@ class RaisedButtonsMenu extends Component {
             Message me
             <EmailIcon className={styles.icon}/>
           </Button>
-          <Button variant="raised" color="secondary" className={styles.resume}>
+          <Button variant="raised" color="secondary" className={styles.resume} onClick={() => {this.showPrintable()}}>
             Printable Version
             <AttachmentIcon className={styles.icon}/>
           </Button>

@@ -7,49 +7,59 @@ import LinkedInIcon from './LinkedIn';
 import GithubIcon from './Github';
 import InstagramIcon from './Instagram';
 import Button from 'material-ui/Button';
+import ReactGA from 'react-ga';
 
 class ActionMenu extends Component {
   constructor(props) {
     super(props);
   }
   
-  openGithub() {
+  getLink(target) {
     if (this.props.metadata) {
-      return this.props.metadata.social.github;
+      return this.props.metadata.social[target] || "#";
     }
   }
-
-  openTwitter() {
-    if (this.props.metadata) {
-      return this.props.metadata.social.twitter;
+  
+  onClick(target) {
+    let value = null;
+    switch (target) {
+      case 'open_github':
+        value = 'Github';
+        break;
+      case 'open_twitter':
+        value = 'Twitter';
+        break;
+      case 'open_linkedin':
+        value = 'LinkedIn';
+        break;
+      case 'open_instagram':
+        value = 'Instagram';
+        break;
     }
-  }
-
-  openLinkedIn() {
-    if (this.props.metadata) {
-      return this.props.metadata.social.linkedin;
-    }
-  }
-
-  openInstagram() {
-    if (this.props.metadata) {
-      return this.props.metadata.social.instagram;
-    }
+    ReactGA.event({
+      category: 'Social',
+      action: 'Clicked on ' + value
+    });
+    document.getElementById(target).click();
   }
   
   render() {
     return (
         <nav id={styles.actionMenu} className={(this.props.shrink ? styles.shrink : styles.expand)}>
-          <Button variant="fab" mini color="secondary" aria-label="add" href={this.openGithub()}>
+          <a href={this.getLink('github')} target="_blank" id="open_github"/>
+          <Button variant="fab" mini color="secondary" aria-label="add" onClick={() => this.onClick('open_github')}>
             <GithubIcon />
           </Button>
-          <Button variant="fab" mini color="secondary" aria-label="add" href={this.openTwitter()}>
+          <a href={this.getLink('twitter')} target="_blank" id="open_twitter"/>
+          <Button variant="fab" mini color="secondary" aria-label="add" onClick={() => this.onClick('open_twitter')}>
             <TwitterIcon />
           </Button>
-          <Button variant="fab" mini color="secondary" aria-label="add" href={this.openLinkedIn()}>
+          <a href={this.getLink('linkedin')} target="_blank" id="open_linkedin"/>
+          <Button variant="fab" mini color="secondary" aria-label="add" onClick={() => this.onClick('open_linkedin')}>
             <LinkedInIcon />
           </Button>
-          <Button variant="fab" mini color="secondary" aria-label="add" href={this.openInstagram()}>
+          <a href={this.getLink('instagram')} target="_blank" id="open_instagram"/>
+          <Button variant="fab" mini color="secondary" aria-label="add" onClick={() => this.onClick('open_instagram')}>
             <InstagramIcon />
           </Button>
         </nav>

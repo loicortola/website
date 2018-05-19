@@ -4,6 +4,7 @@ import {Provider} from 'react-redux';
 import {ConnectedRouter} from 'react-router-redux';
 import {IntlProvider} from 'react-intl-redux';
 import {MuiThemeProvider} from 'material-ui/styles';
+import ReactGA from 'react-ga';
 // Page Components
 import Routes from '../routes';
 import Index from './index/Index';
@@ -17,6 +18,9 @@ class Root extends Component {
     super(props);
   }
 
+  componentWillMount() {
+    ReactGA.initialize(Config.gaTrackingId);
+  }
 
   render() {
     return (

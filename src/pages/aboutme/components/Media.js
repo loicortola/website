@@ -6,6 +6,7 @@ import {push} from "react-router-redux";
 import {connect} from "react-redux";
 import Typography from 'material-ui/Typography';
 import PlayIcon from 'material-ui-icons/PlayArrow';
+import ReactGA from 'react-ga';
 
 class Media extends Component {
   constructor(props) {
@@ -18,10 +19,19 @@ class Media extends Component {
     }
     return '/images/' + video.thumbnail;
   }
+  
+  onVideoClick(id) {
+    ReactGA.event({
+      category: 'Media',
+      action: 'Clicked on Video',
+      value: id
+    });
+    this.props.goToPage('/video/' + id);
+  }
 
   computeVideo(video) {
     return (
-        <div key={video.id} onClick={() => this.props.goToPage('/video/' + video.id)} className={styles.media}>
+        <div key={video.id} onClick={() => this.onVideoClick(video.id)} className={styles.media}>
           <img src={this.getThumbnailLink(video)} className={styles.thumbnail}/>
           <Typography variant="body2" component="div">{video.title}</Typography>
           <div className={styles.descriptionContainer}>

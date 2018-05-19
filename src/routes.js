@@ -8,7 +8,7 @@ import projects from "./pages/projects";
 import photo from "./pages/photo";
 import video from "./pages/video";
 import {connect} from 'react-redux';
-
+import withTracker from './partials/tracking/withTracker';
 class Routes extends Component {
   constructor(props) {
     super(props);
@@ -17,12 +17,12 @@ class Routes extends Component {
   render() {
     return (
         <Switch>
-          <Route path="/aboutme" component={aboutme.components.AboutMePage}/>
-          <Route path="/contact" component={contact.components.ContactPage}/>
-          <Route path="/work" component={work.components.WorkPage}/>
-          <Route path="/projects" component={projects.components.ProjectsPage}/>
-          <Route path="/photo" component={photo.components.PhotoPage}/>
-          <Route path="/video/:videoId" component={video.components.VideoPage}/>
+          <Route path="/aboutme" component={withTracker(aboutme.components.AboutMePage)}/>
+          <Route path="/contact" component={withTracker(contact.components.ContactPage)}/>
+          <Route path="/work" component={withTracker(work.components.WorkPage)}/>
+          <Route path="/projects" component={withTracker(projects.components.ProjectsPage)}/>
+          <Route path="/photo" component={withTracker(photo.components.PhotoPage)}/>
+          <Route path="/video/:videoId" component={withTracker(video.components.VideoPage)}/>
           <Redirect exact from="/" to="/aboutme" />
         </Switch>
     )

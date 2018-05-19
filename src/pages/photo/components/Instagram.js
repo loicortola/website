@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import {injectIntl} from 'react-intl';
 import styles from './Instagram.scss';
 import LikeIcon from 'material-ui-icons/Favorite';
+import ReactGA from 'react-ga';
+
 class Instagram extends Component {
   constructor(props) {
     super(props);
@@ -19,10 +21,18 @@ class Instagram extends Component {
     let descr = this.props.data.description.substr(0, 48);
     return descr.substr(0, descr.lastIndexOf(" ")) + '...';
   }
+  
+  onClick(id) {
+    ReactGA.event({
+      category: 'Instagram',
+      action: 'Clicked on Picture ' + id
+    });
+    document.getElementById('instaLink' + id).click()
+  }
 
   render() {
     return (
-        <div className={styles.photoContainer} onClick={() => document.getElementById('instaLink' + this.props.id).click()}>
+        <div className={styles.photoContainer} onClick={() => this.onClick(this.props.id)}>
             <a href={this.props.data.url} target="_blank" id={'instaLink' + this.props.id}/>
             <div className={styles.imageContainer}>
               <span className={styles.helper}></span>
