@@ -6,37 +6,29 @@ import Typography from 'material-ui/Typography';
 import ReactMarkdown from 'react-markdown';
 
 import styleSass from './WorkXPHeader.scss';
-export const styles = theme => (
-    {
-      root: theme.mixins.gutters({
-        paddingTop: theme.spacing.unit
-      })
-    });
+
+export const styles = theme => ({
+  root: theme.mixins.gutters({
+    paddingTop: theme.spacing.unit
+  })
+});
 
 function WorkXPDescription(props) {
-  const {
-    className: classNameProp,
-    component: Component,
-    description
-  } = props;
-  
+  const { className: classNameProp, component: Component, description } = props;
+
   const classes = Object.assign(props.classes, styleSass);
 
   return (
-      <Component className={classNames(classes.root, classNameProp)}>
-        <Typography
-              variant={'body2'}
-              component="span"
-              className={classes.label}
-          >
-            {description.label}
-          </Typography>
-        {props.expanded ?
-            <ReactMarkdown source={description.details}/>
-            :
-            <span></span>
-        }
-      </Component>
+    <Component className={classNames(classes.root, classNameProp)}>
+      <Typography variant={'body2'} component="span" className={classes.label}>
+        {description.label}
+      </Typography>
+      {props.expanded ? (
+        <ReactMarkdown source={description.details} />
+      ) : (
+        <span />
+      )}
+    </Component>
   );
 }
 
@@ -68,7 +60,9 @@ WorkXPDescription.propTypes = {
 };
 
 WorkXPDescription.defaultProps = {
-  component: 'div',
+  component: 'div'
 };
 
-export default withStyles(styles, {name: 'WorkXPDescription'})(WorkXPDescription);
+export default withStyles(styles, { name: 'WorkXPDescription' })(
+  WorkXPDescription
+);

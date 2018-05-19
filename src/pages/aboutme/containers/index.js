@@ -1,5 +1,3 @@
 import AboutMePage from './AboutMePage';
 
-export {
-  AboutMePage
-};
+export { AboutMePage };

@@ -1,6 +1,5 @@
 @import "../../../theme/abstracts/media";
 
-
 .card {
   margin: 10px;
 }
@@ -18,16 +17,14 @@
   }
 }
 
-
 .media {
   height: 194px;
 }
 
-
 .skills {
   display: flex;
   flex-wrap: wrap;
-  >* {
+  > * {
     margin: 2px;
   }
 }

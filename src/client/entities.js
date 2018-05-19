@@ -1,4 +1,4 @@
-import {schema, normalize} from 'normalizr';
+import { schema } from 'normalizr';
 
 const metadataEntity = new schema.Entity('metadata');
 
@@ -11,7 +11,7 @@ const educationEntity = new schema.Entity('education');
 const skillEntity = new schema.Entity('skill');
 
 const skillsetEntity = new schema.Entity('skillset', {
-  skills: [ skillEntity ]
+  skills: [skillEntity]
 });
 
 const projectEntity = new schema.Entity('project');
@@ -19,10 +19,10 @@ const projectEntity = new schema.Entity('project');
 const profileEntity = new schema.Entity('profile', {
   metadata: metadataEntity,
   aboutMe: aboutMeEntity,
-  education: [ educationEntity ],
-  work: [ workEntity ],
-  projects: [ projectEntity ],
-  skillsets: [ skillsetEntity ]
+  education: [educationEntity],
+  work: [workEntity],
+  projects: [projectEntity],
+  skillsets: [skillsetEntity]
 });
 
 // Entities export

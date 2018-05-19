@@ -3,21 +3,20 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import withStyles from 'material-ui/styles/withStyles';
 import Typography from 'material-ui/Typography';
-import moment from "moment/moment";
+import moment from 'moment/moment';
 import styleSass from './WorkXPHeader.scss';
 
 export const styles = theme => ({
-      root: theme.mixins.gutters({
-        display: 'flex',
-        alignItems: 'center',
-        paddingTop: theme.spacing.unit * 2,
-        paddingBottom: theme.spacing.unit * 2,
-      })
-    });
+  root: theme.mixins.gutters({
+    display: 'flex',
+    alignItems: 'center',
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2
+  })
+});
 
 function WorkXPHeader(props) {
   const {
-    action,
     avatar,
     className: classNameProp,
     component: Component,
@@ -26,9 +25,8 @@ function WorkXPHeader(props) {
     company,
     position
   } = props;
-  
+
   const classes = Object.assign(props.classes, styleSass);
-  
 
   function getDuration(startDateStr, endDateStr) {
     let startDate = moment(startDateStr);
@@ -42,36 +40,43 @@ function WorkXPHeader(props) {
       }
       return durationInMonths + ' months';
     }
-    return 'Since ' + (startDate.year() === moment().year() ? startDate.format('MMMM') : startDate.format('YYYY'));
+    return (
+      'Since ' +
+      (startDate.year() === moment().year()
+        ? startDate.format('MMMM')
+        : startDate.format('YYYY'))
+    );
   }
 
   return (
-      <Component className={classNames(classes.root, classNameProp)}>
-        {avatar && <div className={classes.avatar}>{avatar}</div>}
-        <div className={classes.content}>
-          <Typography
-              variant={'headline'}
-              component="span"
-              className={classes.title}
-          >
-            {position} @ {company.name}
-          </Typography>
-          <Typography
-              variant={'body1'}
-              component="span"
-              color="textSecondary"
-              className={classes.subheader}>
-            {company.description}
-          </Typography>
-        </div>
+    <Component className={classNames(classes.root, classNameProp)}>
+      {avatar && <div className={classes.avatar}>{avatar}</div>}
+      <div className={classes.content}>
         <Typography
-            variant="body2"
-            component="span"
-            color="textSecondary"
-            className={classes.dates}>
-          {getDuration(startDate, endDate)}
+          variant={'headline'}
+          component="span"
+          className={classes.title}
+        >
+          {position} @ {company.name}
         </Typography>
-      </Component>
+        <Typography
+          variant={'body1'}
+          component="span"
+          color="textSecondary"
+          className={classes.subheader}
+        >
+          {company.description}
+        </Typography>
+      </div>
+      <Typography
+        variant="body2"
+        component="span"
+        color="textSecondary"
+        className={classes.dates}
+      >
+        {getDuration(startDate, endDate)}
+      </Typography>
+    </Component>
   );
 }
 
@@ -101,7 +106,7 @@ WorkXPHeader.propTypes = {
 };
 
 WorkXPHeader.defaultProps = {
-  component: 'div',
+  component: 'div'
 };
 
-export default withStyles(styles, {name: 'WorkXPHeader'})(WorkXPHeader);
+export default withStyles(styles, { name: 'WorkXPHeader' })(WorkXPHeader);

@@ -1,23 +1,22 @@
-import React, {Component} from 'react';
-import {NavLink} from 'react-router';
+import React, { Component } from 'react';
 import Footer from './Footer';
-import {connect} from 'react-redux';
-import {loadMetadata} from '../../actions/cv';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 class FooterPartial extends Component {
-  constructor(props) {
-    super(props);
-  }
-  
   render() {
-    return (
-      <Footer />
-    )
+    return <Footer />;
   }
 }
 
-const mapStateToProps = (state, ownProps) => ({
-  metadata: state.metadata
+const mapStateToProps = (state) => ({
+  metadata: state.cv.metadata
 });
 
-export default connect(mapStateToProps, {loadMetadata})(FooterPartial)
+
+// TypeChecking for properties
+FooterPartial.propTypes = {
+  metadata: PropTypes.object
+};
+
+export default connect(mapStateToProps)(FooterPartial);

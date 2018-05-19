@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styles from './RaisedButtonsMenu.scss';
 import PropTypes from 'prop-types';
-import {injectIntl} from 'react-intl';
+import { injectIntl } from 'react-intl';
 import Button from 'material-ui/Button';
 import LocationIcon from 'material-ui-icons/LocationOn';
 import EmailIcon from 'material-ui-icons/Email';
@@ -26,10 +26,11 @@ class RaisedButtonsMenu extends Component {
       action: 'Clicked on contact'
     });
     if (this.props.metadata) {
-      location.href = "mailto:" + this.props.metadata.email + '?subject=First%20Contact';
+      window.location.href =
+        'mailto:' + this.props.metadata.email + '?subject=First%20Contact';
     }
   }
-  
+
   showPrintable() {
     ReactGA.event({
       category: 'Prospection',
@@ -39,20 +40,36 @@ class RaisedButtonsMenu extends Component {
 
   render() {
     return (
-        <nav id={styles.raisedButtonMenu} className={(this.props.shrink ? styles.shrink : styles.expand)}>
-          <Button variant="raised" color="secondary">
-            {this.renderLocation()}
-            <LocationIcon className={styles.icon}/>
-          </Button>
-          <Button variant="raised" color="secondary" onClick={() => {this.sendMail()}}>
-            Message me
-            <EmailIcon className={styles.icon}/>
-          </Button>
-          <Button variant="raised" color="secondary" className={styles.resume} onClick={() => {this.showPrintable()}}>
-            Printable Version
-            <AttachmentIcon className={styles.icon}/>
-          </Button>
-        </nav>
+      <nav
+        id={styles.raisedButtonMenu}
+        className={this.props.shrink ? styles.shrink : styles.expand}
+      >
+        <Button variant="raised" color="secondary">
+          {this.renderLocation()}
+          <LocationIcon className={styles.icon} />
+        </Button>
+        <Button
+          variant="raised"
+          color="secondary"
+          onClick={() => {
+            this.sendMail();
+          }}
+        >
+          Message me
+          <EmailIcon className={styles.icon} />
+        </Button>
+        <Button
+          variant="raised"
+          color="secondary"
+          className={styles.resume}
+          onClick={() => {
+            this.showPrintable();
+          }}
+        >
+          Printable Version
+          <AttachmentIcon className={styles.icon} />
+        </Button>
+      </nav>
     );
   }
 }

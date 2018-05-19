@@ -1,7 +1,5 @@
 :global {
-  @import "theme/theme";
-  
-  /**
+  @import "theme/theme"; /**
    * Set up a decent box model on the root element
    */
   html {
@@ -11,7 +9,7 @@
     font-family: $font-family;
     color: red;
   }
-  
+
   body {
     margin: 0;
   }
@@ -23,7 +21,7 @@
   .left {
     text-align: left;
   }
-  
+
   a {
     text-decoration: none;
     color: $primary-dark-color;
@@ -32,7 +30,7 @@
       color: $primary-color;
     }
   }
-  
+
   img {
     max-width: 100%;
   }

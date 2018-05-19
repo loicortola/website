@@ -57,7 +57,7 @@
   -webkit-box-shadow: 1px 1px 4px 1px $color;
   -o-box-shadow: 1px 1px 4px 1px $color;
   box-shadow: 1px 1px 4px 1px $color;
-  filter:progid:DXImageTransform.Microsoft.Shadow(color=$color, Direction=134, Strength=4);
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=$color, Direction=134, Strength=4);
 }
 
 @mixin border-radius($size : 5px) {
@@ -71,7 +71,6 @@
   -moz-border-radius: $size !important;
   border-radius: $size !important;
 }
-
 
 @mixin border-radius($top-left: 5px, $top-right: 5px, $bottom-right: 5px, $bottom-left: 5px) {
   -webkit-border-top-left-radius: $top-left;

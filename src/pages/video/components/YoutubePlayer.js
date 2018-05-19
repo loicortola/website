@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {injectIntl} from 'react-intl';
+import { injectIntl } from 'react-intl';
 import styles from './YoutubePlayer.scss';
 
 class Contact extends Component {
@@ -9,7 +9,7 @@ class Contact extends Component {
     this.state = {
       id: this.getVideoId(),
       start: this.getVideoStart()
-    }
+    };
   }
 
   getVideoStart() {
@@ -33,20 +33,26 @@ class Contact extends Component {
   getVideoId() {
     let link = this.props.video.link;
     link = link.split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
-    return (link[2] !== undefined) ? link[2].split(/[^0-9a-z_\-]/i)[0] : link[0];
+    return link[2] !== undefined ? link[2].split(/[^0-9a-z_-]/i)[0] : link[0];
   }
 
   render() {
-    console.log(this.state);
     return (
-        <div className={styles.container}>
-          <iframe
-              className={styles.video}
-              src={"https://www.youtube.com/embed/" + this.state.id + "?" + (this.state.start ? ('&start=' + this.state.start) : '') + "&autoplay=1"}
-              frameBorder="0"
-              allowFullScreen>
-          </iframe>
-        </div>
+      <div className={styles.container}>
+        <iframe
+          title="Video Player"
+          className={styles.video}
+          src={
+            'https://www.youtube.com/embed/' +
+            this.state.id +
+            '?' +
+            (this.state.start ? '&start=' + this.state.start : '') +
+            '&autoplay=1'
+          }
+          frameBorder="0"
+          allowFullScreen
+        />
+      </div>
     );
   }
 }

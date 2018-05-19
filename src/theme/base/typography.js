@@ -1,6 +1,6 @@
 import style from './_typography.scss';
 import dimens from '../abstracts/dimensExport.scss';
-import palette from "../abstracts/paletteExport.scss";
+import palette from '../abstracts/paletteExport.scss';
 
 const typography = {
   // Others if we want:
@@ -25,7 +25,6 @@ const typography = {
     fontFamily: style.fontFamily,
     lineHeight: dimens.textSizeL,
     color: palette.textColorSecondary
-
   },
   body2: {
     fontSize: dimens.textSizeSM,
@@ -33,7 +32,6 @@ const typography = {
     fontFamily: style.fontFamily,
     lineHeight: dimens.textSizeXL,
     color: palette.textColorPrimary
-
   },
   body1: {
     fontSize: dimens.textSizeSM,
@@ -41,7 +39,7 @@ const typography = {
     fontFamily: style.fontFamily,
     lineHeight: dimens.textSizeMD,
     color: palette.textColorPrimary
-  },
-}
+  }
+};
 
 export default typography;

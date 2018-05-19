@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {injectIntl} from 'react-intl';
+import { injectIntl } from 'react-intl';
 import Skill from '../../../partials/skill/Skill';
-import Card, {CardContent} from 'material-ui/Card';
+import Card, { CardContent } from 'material-ui/Card';
 import ProjectHeader from '../components/ProjectHeader';
 import ProjectDescription from './ProjectDescription';
 import Avatar from 'material-ui/Avatar';
@@ -18,57 +18,64 @@ class Project extends Component {
     super(props);
     this.state = {
       expanded: true
-    }
+    };
   }
 
   getAvatar(label) {
-    const matches = label.toUpperCase().replace(/[\.\-_0-9]/,'').match(/\b(\w)/g);
+    const matches = label
+      .toUpperCase()
+      .replace(/[.\-_0-9]/, '')
+      .match(/\b(\w)/g);
     return matches.join('');
   }
-  
-  
+
   getSkillset(project) {
-    let result = []
+    let result = [];
     project.skills.forEach((s, i) => {
-      result.push(<Skill label={s} key={i}/>)
+      result.push(<Skill label={s} key={i} />);
     });
     return result;
   }
 
   render() {
     return (
-        <div>
-          <Card className={styles.card}>
-            <ProjectHeader
-                avatar={
-                  this.props.data.logo ?
-                  <Avatar aria-label="Recipe" className={styles.avatar} src={"/images/" + this.props.data.logo}>
-                  </Avatar>
-                      :
-                  <Avatar>{this.getAvatar(this.props.data.title)}</Avatar>
-                }
-                action={
-                  <IconButton>
-                    <MoreVertIcon/>
-                  </IconButton>
-                }
-                title={this.props.data.title}
-                website={this.props.data.website}
-            />
-            <Divider/>
-            <CardContent>
-              <ProjectDescription description={this.props.data.description}></ProjectDescription>
-            </CardContent>
-            <Divider/>
-            <div className={styles.techenv}>
-              <Typography variant="body2" component="div">Technical environment</Typography>
-              <div className={styles.skills}>
-                {this.getSkillset(this.props.data)}
-              </div>
+      <div>
+        <Card className={styles.card}>
+          <ProjectHeader
+            avatar={
+              this.props.data.logo ? (
+                <Avatar
+                  aria-label="Recipe"
+                  className={styles.avatar}
+                  src={'/images/' + this.props.data.logo}
+                />
+              ) : (
+                <Avatar>{this.getAvatar(this.props.data.title)}</Avatar>
+              )
+            }
+            action={
+              <IconButton>
+                <MoreVertIcon />
+              </IconButton>
+            }
+            title={this.props.data.title}
+            website={this.props.data.website}
+          />
+          <Divider />
+          <CardContent>
+            <ProjectDescription description={this.props.data.description} />
+          </CardContent>
+          <Divider />
+          <div className={styles.techenv}>
+            <Typography variant="body2" component="div">
+              Technical environment
+            </Typography>
+            <div className={styles.skills}>
+              {this.getSkillset(this.props.data)}
             </div>
-            
-          </Card>
-        </div>
+          </div>
+        </Card>
+      </div>
     );
   }
 }

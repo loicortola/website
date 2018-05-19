@@ -1,2 +1,3 @@
 import * as components from './containers';
-export default {components};
+
+export default { components };

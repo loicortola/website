@@ -27,7 +27,6 @@
   color: $dark-grey !important;
 }
 
-
 @media #{$handheld} {
   .title {
     font-size: $text-size-md !important;
@@ -35,7 +34,7 @@
   .dates {
     margin-right: ($spacing-unit * -1);
     font-size: $text-size-xs !important;
-  } 
+  }
   .subheader {
     font-size: $text-size-xs !important;
   }

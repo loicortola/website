@@ -1,5 +1,5 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const path = require('path');
@@ -16,11 +16,11 @@ module.exports = (params) => ({
   output: {
     publicPath: '/',
     path: path.resolve(__dirname, 'dist'),
-    filename: "[name].[chunkhash].js"
+    filename: '[name].[chunkhash].js'
   },
   // External config (will not be bundled)
   externals: {
-    [path.resolve(sourcePath, path.join('conf','conf.js'))]: 'Config'
+    [path.resolve(sourcePath, path.join('conf', 'conf.js'))]: 'Config'
   },
   module: {
     rules: [
@@ -28,27 +28,27 @@ module.exports = (params) => ({
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: [
-          'babel-loader'
+          'babel-loader', 'eslint-loader'
         ]
       },
       {
         test: /\.scss$/,
         use: [
           {
-            loader: "style-loader" // creates style nodes from JS strings
+            loader: 'style-loader' // creates style nodes from JS strings
           },
           {
-            loader: "css-loader", // translates CSS into CommonJS
+            loader: 'css-loader', // translates CSS into CommonJS
             options: {
               modules: true,
               importLoaders: 1,
-              localIdentName: "[name]_[local]_[hash:base64]",
+              localIdentName: '[name]_[local]_[hash:base64]',
               sourceMap: true,
               minimize: true
             }
           },
           {
-            loader: "sass-loader" // compiles Sass to CSS
+            loader: 'sass-loader' // compiles Sass to CSS
           }
         ]
       },
@@ -67,15 +67,15 @@ module.exports = (params) => ({
     ]
   },
   plugins: [
-    ...((params && params.analysis) ? [ new BundleAnalyzerPlugin()] : []),
+    ...((params && params.analysis) ? [new BundleAnalyzerPlugin()] : []),
     new CopyWebpackPlugin(
-        [
-          { from: path.join(staticSourcePath, 'images'), to: path.join(distPath, 'images')},
-          { from: path.join(staticSourcePath, 'privacy-policy.html'), to: path.join(distPath)},
-          { from: path.join(staticSourcePath, 'terms-and-conditions.html'), to: path.join(distPath)},
-          { from: path.join(staticSourcePath, 'robots.txt'), to: path.join(distPath)},
-          { from: path.join(staticSourcePath, 'sitemap.xml'), to: path.join(distPath)},
-        ]
+      [
+        { from: path.join(staticSourcePath, 'images'), to: path.join(distPath, 'images') },
+        { from: path.join(staticSourcePath, 'privacy-policy.html'), to: path.join(distPath) },
+        { from: path.join(staticSourcePath, 'terms-and-conditions.html'), to: path.join(distPath) },
+        { from: path.join(staticSourcePath, 'robots.txt'), to: path.join(distPath) },
+        { from: path.join(staticSourcePath, 'sitemap.xml'), to: path.join(distPath) },
+      ]
     ),
     // Copy html files and resources to destination, minify
     new HtmlWebPackPlugin({
@@ -87,7 +87,7 @@ module.exports = (params) => ({
   optimization: {
     splitChunks: {
       cacheGroups: {
-        commons: { test: /[\\/]node_modules[\\/]/, name: "vendor", chunks: "all" }
+        commons: { test: /[\\/]node_modules[\\/]/, name: 'vendor', chunks: 'all' }
       }
     },
   }

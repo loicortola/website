@@ -1,6 +1,13 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {FormattedMessage, defineMessages, injectIntl} from 'react-intl';
+import { defineMessages, FormattedMessage, injectIntl } from 'react-intl';
+
+defineMessages({
+  msgContactMe: {
+    id: 'msg.contactme',
+    defaultMessage: 'Contact me with email'
+  }
+});
 
 class Contact extends Component {
   constructor(props) {
@@ -9,7 +16,9 @@ class Contact extends Component {
 
   render() {
     return (
-        <div>Contact me with email: {this.props.metadata.email}</div>
+      <div>
+        <FormattedMessage id="msg.contactme" />: {this.props.metadata.email}
+      </div>
     );
   }
 }

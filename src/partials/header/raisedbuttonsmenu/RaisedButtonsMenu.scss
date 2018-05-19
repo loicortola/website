@@ -14,9 +14,9 @@
       padding: 2px 10px;
       margin-bottom: 5px;
       font-size: $text-size-xs;
-    }  
+    }
   }
-  
+
   &.shrink {
     display: none;
   }
@@ -46,7 +46,7 @@
         display: none;
       }
     }
-    
+
   }
 
   @media #{$computer-big} {
@@ -60,5 +60,5 @@
     right: 50px;
     top: 30px;
   }
-  
+
 }

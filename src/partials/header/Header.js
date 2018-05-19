@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styles from './Header.scss';
 import PropTypes from 'prop-types';
-import {injectIntl} from 'react-intl';
+import { injectIntl } from 'react-intl';
 import Avatar from 'material-ui/Avatar';
 import Menu from './menu/Menu';
 import ActionMenu from './actionmenu/ActionMenu';
@@ -12,17 +12,25 @@ import classNames from 'classnames';
 class Header extends Component {
   constructor(props) {
     super(props);
-    window.onscroll = () => {
-      this.changeNav()
-    };
+    if (window) {
+      window.onscroll = () => {
+        this.changeNav();
+      };
+    }
     this.state = {
-      height: parseInt(styles.headerLargeHeight) - parseInt(styles.headerShrinkHeight),
+      height:
+        parseInt(styles.headerLargeHeight, 10) -
+        parseInt(styles.headerShrinkHeight, 10),
       shrinkNav: false
     };
   }
 
   changeNav() {
-    let offset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    let offset =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
     if (offset > this.state.height && !this.state.shrinkNav) {
       this.setState({
         shrinkNav: true
@@ -33,14 +41,14 @@ class Header extends Component {
       });
     }
   }
-  
+
   renderName() {
     if (this.props.metadata) {
       return this.props.metadata.firstName + ' ' + this.props.metadata.lastName;
     }
     return 'Loading';
   }
-  
+
   renderCatchline() {
     if (this.props.metadata) {
       return this.props.metadata.catchline;
@@ -50,22 +58,43 @@ class Header extends Component {
 
   render() {
     return (
-        <header id={styles.header} className={(this.state.shrinkNav ? styles.shrink : styles.expand)}>
-          <div className={classNames(styles.headerContainer, (this.state.shrinkNav ? styles.shrink : styles.expand))}>
-            <div id={styles.headerMetaContainer}>
-              <div id={styles.metadata}>
-                <Avatar
-                    src="/images/profile-default.jpg"
-                    className={styles.avatar}/>
-                <Typography component="div" variant="headline" className={styles.name}>{this.renderName()}</Typography>
-                <div className={styles.catchline}>{this.renderCatchline()}</div>
-              </div>
+      <header
+        id={styles.header}
+        className={this.state.shrinkNav ? styles.shrink : styles.expand}
+      >
+        <div
+          className={classNames(
+            styles.headerContainer,
+            this.state.shrinkNav ? styles.shrink : styles.expand
+          )}
+        >
+          <div id={styles.headerMetaContainer}>
+            <div id={styles.metadata}>
+              <Avatar
+                src="/images/profile-default.jpg"
+                className={styles.avatar}
+              />
+              <Typography
+                component="div"
+                variant="headline"
+                className={styles.name}
+              >
+                {this.renderName()}
+              </Typography>
+              <div className={styles.catchline}>{this.renderCatchline()}</div>
             </div>
-            <RaisedButtonMenu metadata={this.props.metadata} shrink={this.state.shrinkNav}/>
-            <ActionMenu metadata={this.props.metadata} shrink={this.state.shrinkNav}/>
-            <Menu/>
           </div>
-        </header>
+          <RaisedButtonMenu
+            metadata={this.props.metadata}
+            shrink={this.state.shrinkNav}
+          />
+          <ActionMenu
+            metadata={this.props.metadata}
+            shrink={this.state.shrinkNav}
+          />
+          <Menu />
+        </div>
+      </header>
     );
   }
 }

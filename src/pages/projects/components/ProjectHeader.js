@@ -3,51 +3,49 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import withStyles from 'material-ui/styles/withStyles';
 import Typography from 'material-ui/Typography';
-import moment from "moment/moment";
 import styleSass from './ProjectHeader.scss';
 
 export const styles = theme => ({
-      root: theme.mixins.gutters({
-        display: 'flex',
-        alignItems: 'center',
-        paddingTop: theme.spacing.unit * 2,
-        paddingBottom: theme.spacing.unit * 2,
-      })
-    });
+  root: theme.mixins.gutters({
+    display: 'flex',
+    alignItems: 'center',
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2
+  })
+});
 
 function ProjectHeader(props) {
   const {
-    action,
     avatar,
     className: classNameProp,
     component: Component,
     website,
     title
   } = props;
-  
+
   const classes = Object.assign(props.classes, styleSass);
-  
 
   return (
-      <Component className={classNames(classes.root, classNameProp)}>
-        {avatar && <div className={classes.avatar}>{avatar}</div>}
-        <div className={classes.content}>
-          <Typography
-              variant={'headline'}
-              component="span"
-              className={classes.title}
-          >
-            {title}
-          </Typography>
-          <Typography
-              variant={'body1'}
-              component="span"
-              color="textSecondary"
-              className={classes.subheader}>
-            {website}
-          </Typography>
-        </div>
-      </Component>
+    <Component className={classNames(classes.root, classNameProp)}>
+      {avatar && <div className={classes.avatar}>{avatar}</div>}
+      <div className={classes.content}>
+        <Typography
+          variant={'headline'}
+          component="span"
+          className={classes.title}
+        >
+          {title}
+        </Typography>
+        <Typography
+          variant={'body1'}
+          component="span"
+          color="textSecondary"
+          className={classes.subheader}
+        >
+          {website}
+        </Typography>
+      </div>
+    </Component>
   );
 }
 
@@ -75,7 +73,7 @@ ProjectHeader.propTypes = {
 };
 
 ProjectHeader.defaultProps = {
-  component: 'div',
+  component: 'div'
 };
 
-export default withStyles(styles, {name: 'WorkXPHeader'})(ProjectHeader);
+export default withStyles(styles, { name: 'WorkXPHeader' })(ProjectHeader);

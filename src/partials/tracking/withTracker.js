@@ -3,10 +3,11 @@
  */
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactGA from 'react-ga';
 
 export default function withTracker(WrappedComponent, options = {}) {
-  const trackPage = (page) => {
+  const trackPage = page => {
     ReactGA.set({
       page,
       ...options
@@ -14,15 +15,15 @@ export default function withTracker(WrappedComponent, options = {}) {
     ReactGA.pageview(page);
   };
 
-  const HOC = class extends Component {
+  class WithTracker extends Component {
     componentDidMount() {
       const page = this.props.location.pathname;
       trackPage(page);
     }
 
-    componentWillReceiveProps(nextProps) {
-      const currentPage = this.props.location.pathname;
-      const nextPage = nextProps.location.pathname;
+    componentDidUpdate(prevProps) {
+      const currentPage = prevProps.location.pathname;
+      const nextPage = this.props.location.pathname;
 
       if (currentPage !== nextPage) {
         trackPage(nextPage);
@@ -33,6 +34,11 @@ export default function withTracker(WrappedComponent, options = {}) {
       return <WrappedComponent {...this.props} />;
     }
   };
-
-  return HOC;
+  
+  // TypeChecking for properties
+  WithTracker.propTypes = {
+    location: PropTypes.object.isRequired
+  };
+  
+  return WithTracker;
 }

@@ -1,15 +1,10 @@
-import React, {Component} from 'react';
-import {NavLink} from 'react-router';
-import {connect} from 'react-redux';
-import {loadProjects} from '../../../actions/cv';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { loadProjects } from '../../../actions/cv';
 import Project from '../components/Project';
+import PropTypes from 'prop-types';
 
 class ProjectsPage extends Component {
-  
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.loadProjects();
   }
@@ -18,16 +13,22 @@ class ProjectsPage extends Component {
     if (this.props.projects && Object.keys(this.props.projects).length > 0) {
       let result = [];
       for (let k in Object.keys(this.props.projects)) {
-        result.push(<Project data={this.props.projects[k]} key={k}/>);
+        result.push(<Project data={this.props.projects[k]} key={k} />);
       }
       return result;
     }
-    return (<div className="projects-container">Projects</div>)
+    return <div className="projects-container">Projects</div>;
   }
 }
 
-const mapStateToProps = (state, ownProps) => ({
+// TypeChecking for properties
+ProjectsPage.propTypes = {
+  loadProjects: PropTypes.func.isRequired,
+  projects: PropTypes.object
+};
+
+const mapStateToProps = (state) => ({
   projects: state.cv.projects
 });
 
-export default connect(mapStateToProps, {loadProjects})(ProjectsPage)
+export default connect(mapStateToProps, { loadProjects })(ProjectsPage);

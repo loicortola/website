@@ -1,5 +1,3 @@
 import PhotoPage from './PhotoPage';
 
-export {
-  PhotoPage
-};
+export { PhotoPage };

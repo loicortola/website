@@ -1,9 +1,20 @@
+/* eslint-disable no-console,no-undef */
 import axios from 'axios';
+import { normalize } from 'normalizr';
+
+const conf = {
+  // eslint-disable-next-line
+  apiBaseUrl: Config ? Config.apiBaseUrl : process.env.REACT_APP_API_BASE_URL
+};
+
 
 const callApi = (endpoint, method, schema, store, headers, body) => {
   console.log('Will call api with endpoint', endpoint, 'and method', method);
   // Create Url
-  const fullUrl = (endpoint.indexOf(Config.apiBaseUrl) === -1) ? Config.apiBaseUrl + '/' + endpoint : endpoint;
+  const fullUrl =
+    endpoint.indexOf(conf.apiBaseUrl) === -1
+      ? conf.apiBaseUrl + '/' + endpoint
+      : endpoint;
   // Return Promise
   return axios({
     url: fullUrl,
@@ -27,8 +38,8 @@ export default store => next => action => {
   }
 
   // A CALL_API action has an endpoint, a method, 3 action types, a schema (optional), a body (optional)
-  let {endpoint} = callAPI;
-  const {schema, method, body, types, headers} = callAPI;
+  let { endpoint } = callAPI;
+  const { schema, method, body, types, headers } = callAPI;
 
   // Some endpoints can require state to replace path variables and params
   if (typeof endpoint === 'function') {
@@ -53,40 +64,44 @@ export default store => next => action => {
     return finalAction;
   };
 
-  const [ requestType, successType, failureType ] = types;
+  const [requestType, successType, failureType] = types;
 
   // This only forwards the type request to be dispatched without the specific API content payload
-  next(actionWith({type: requestType}));
+  next(actionWith({ type: requestType }));
 
   // Calls API and will forward the type success or failure after completion
   return callApi(endpoint, method, schema, store, headers, body)
-  .then(res => {
-    // Success
-    let result = null;
-    if (schema) {
-      // Parse normalized response body according to schema
-      result = Object.assign({}, normalize(res.data, schema));
-    } else {
-      // No schema provided.
-      if (Array.isArray(res.data)) {
-        result = res.data;
-      } else if (typeof res.data === 'object') {
-        result = Object.assign({}, res.data);
+    .then(res => {
+      // Success
+      let result = null;
+      if (schema) {
+        // Parse normalized response body according to schema
+        result = Object.assign({}, normalize(res.data, schema));
       } else {
-        result = res.data;
+        // No schema provided.
+        if (Array.isArray(res.data)) {
+          result = res.data;
+        } else if (typeof res.data === 'object') {
+          result = Object.assign({}, res.data);
+        } else {
+          result = res.data;
+        }
       }
-    }
-    return next(actionWith({
-      result,
-      type: successType
-    }));
-  })
-  .catch(err => {
-    // Error
-    console.log('Error: ', err);
-    return next(actionWith({
-      type: failureType,
-      error: {message: err.statusText, data: err.data, status: err.status}
-    }));
-  });
-}
+      return next(
+        actionWith({
+          result,
+          type: successType
+        })
+      );
+    })
+    .catch(err => {
+      // Error
+      console.log('Error: ', err);
+      return next(
+        actionWith({
+          type: failureType,
+          error: { message: err.statusText, data: err.data, status: err.status }
+        })
+      );
+    });
+};

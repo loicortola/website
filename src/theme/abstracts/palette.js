@@ -5,13 +5,13 @@ const palette = {
     light: style.colorPrimaryLight,
     main: style.colorPrimary,
     dark: style.colorPrimaryDark,
-    contrastText: style.textColorPrimary,
+    contrastText: style.textColorPrimary
   },
   secondary: {
     light: style.colorSecondaryLight,
     main: style.colorSecondary,
     dark: style.colorSecondaryDark,
-    contrastText: style.textColorSecondary,
+    contrastText: style.textColorSecondary
   },
   text: {
     primary: style.textColorPrimary,

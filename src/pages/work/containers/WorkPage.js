@@ -1,15 +1,10 @@
-import React, {Component} from 'react';
-import {NavLink} from 'react-router';
-import {connect} from 'react-redux';
-import {loadWork} from '../../../actions/cv';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { loadWork } from '../../../actions/cv';
 import Work from '../components/Work';
+import PropTypes from 'prop-types';
 
 class WorkPage extends Component {
-  
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.loadWork();
   }
@@ -18,16 +13,24 @@ class WorkPage extends Component {
     if (this.props.work && Object.keys(this.props.work).length > 0) {
       let result = [];
       for (let k in Object.keys(this.props.work)) {
-        result.push(<Work experience={this.props.work[k]} key={k}/>);
+        result.push(<Work experience={this.props.work[k]} key={k} />);
       }
       return result;
     }
-    return (<div className="work-container">Work</div>)
+    return <div className="work-container">Loading</div>;
   }
 }
 
-const mapStateToProps = (state, ownProps) => ({
+
+// TypeChecking for properties
+WorkPage.propTypes = {
+  loadWork: PropTypes.func.isRequired,
+  work: PropTypes.array
+};
+
+
+const mapStateToProps = (state) => ({
   work: state.cv.work
 });
 
-export default connect(mapStateToProps, {loadWork})(WorkPage)
+export default connect(mapStateToProps, { loadWork })(WorkPage);

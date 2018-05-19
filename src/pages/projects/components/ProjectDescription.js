@@ -5,26 +5,22 @@ import withStyles from 'material-ui/styles/withStyles';
 import ReactMarkdown from 'react-markdown';
 
 import styleSass from './ProjectHeader.scss';
-export const styles = theme => (
-    {
-      root: theme.mixins.gutters({
-        paddingTop: theme.spacing.unit
-      })
-    });
+
+export const styles = theme => ({
+  root: theme.mixins.gutters({
+    paddingTop: theme.spacing.unit
+  })
+});
 
 function ProjectDescription(props) {
-  const {
-    className: classNameProp,
-    component: Component,
-    description
-  } = props;
-  
+  const { className: classNameProp, component: Component, description } = props;
+
   const classes = Object.assign(props.classes, styleSass);
 
   return (
-      <Component className={classNames(classes.root, classNameProp)}>
-        <ReactMarkdown source={description} />
-      </Component>
+    <Component className={classNames(classes.root, classNameProp)}>
+      <ReactMarkdown source={description} />
+    </Component>
   );
 }
 
@@ -55,7 +51,9 @@ ProjectDescription.propTypes = {
 };
 
 ProjectDescription.defaultProps = {
-  component: 'div',
+  component: 'div'
 };
 
-export default withStyles(styles, {name: 'WorkXPDescription'})(ProjectDescription);
+export default withStyles(styles, { name: 'WorkXPDescription' })(
+  ProjectDescription
+);
