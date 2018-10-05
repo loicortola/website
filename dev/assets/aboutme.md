@@ -6,11 +6,11 @@ I am a reader, a music junkie, a travel addict, and a fulltime geek.
 
 
 I love Java, Reactive programming, Maps, and DevOps.  
-I enjoy contributing on OpenSource projects, hacking IoT devices, and sharing my passion through conferences about technology.
+I enjoy contributing on OpenSource projects, hacking IoT devices, and sharing my passion anywhere I can.
 
 I spend my energy and time in different ways:  
+ * As the Advocate of Takima, spreading the word about latest tech trends in Meetups, Conferences and so on
  * As the CTO of Jawg Maps, the new disruptive mapping platform in Europe
- * Giving conferences & consulting in various Companies & Schools
  * In tech-related non-profits such as HAND, Resourcepool, or Hermitage.
 
 ## Hackers Against Natural Disasters
@@ -41,12 +41,10 @@ Frank Oppenheimer
 
 
 Some time ago, I realized I **loved** inspiring others by sharing my passion and respect for our job. 
-I feel grateful for sharing thoughts in Universities & Companies around what matters to me: 
+I feel grateful for sharing thoughts all around Europe about things I care about:  
 Happiness at Work, and Technology: Java, Android, DevOps, Performance Tuning, the history & future of the web, etc…
 
 So far, I was involved with Epitech, INSA Lyon, École 42 (Xavier Niel), CPE Lyon, INSA Rouen, Mines de Nantes, Mines de Douai, Université Paris 7, ECE Paris, ISART Paris, EPF Sceaux, Université de Technologie de Troyes, Université de Rouen, CESI Nancy, ENSI Caen, ESAIP Angers, Faculté d'Orsay, ENSTA ParisTech, Université de Technologie de Compiègne.
-
-Jawg is fully funded by eBusiness Information.
 
 I wish you an amazing day.
 
