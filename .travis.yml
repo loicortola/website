@@ -4,11 +4,11 @@ node_js:
 - node
 cache:
   directories:
-  - node_modules
+  - "client/node_modules"
 services:
 - docker
 install:
-- npm install
+- cd client && npm install
 script:
 - cd client
 - npm test
