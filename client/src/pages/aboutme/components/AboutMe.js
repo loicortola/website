@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown/with-html';
 import styles from './AboutMe.scss';
 
 class AboutMe extends Component {
@@ -10,6 +10,7 @@ class AboutMe extends Component {
         <ReactMarkdown
           className="markdown-container"
           source={this.props.text}
+          escapeHtml={false}
         />
       </div>
     );

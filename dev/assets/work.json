@@ -62,7 +62,7 @@
     "id": 7,
     "position": "Lead Developer",
     "company": {
-      "name": "eBiz (eBusiness Information)",
+      "name": "Takima",
       "description": "Raising Coding ninjas in DevOps, Java, Web and Mobile technologies",
       "customers": [
         "ETAM",
@@ -72,10 +72,9 @@
         "JCDecaux",
         "Laposte"
       ],
-      "logo": "logo-ebiz.png"
+      "logo": "logo-takima.png"
     },
     "startDate": "2013-02",
-    "endDate": "2017-07",
     "location": {
       "name": "Paris, France",
       "coordinates": {
@@ -101,7 +100,7 @@
         "details": "The concept was to reverse-engineer the time-based info into a predictive frequency model.\r\nIn the end, the embedded database is about 1/290 of the original size."
       },
       {
-        "label": "Tech conferences & Trainings",
+        "label": "Advocating",
         "details": "I started giving trainings and conferences about Java, Java EE, Android, and Git to mostly universities."
       }
     ],
@@ -109,19 +108,15 @@
       "Java",
       "Spring",
       "Hibernate",
-      "Jackson",
+      "Web",
       "Maven",
       "Android",
       "Gradle",
       "Git",
-      "MySQL",
-      "MongoDB",
+      "NoSQL",
       "HTML5",
       "CSS3",
-      "Angular.js",
-      "Grunt",
-      "Gulp",
-      "Bower"
+      "Angular"
     ]
   },
   {

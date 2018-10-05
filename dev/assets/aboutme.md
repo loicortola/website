@@ -25,8 +25,12 @@ The latest operation (codename Caribe Wave 2018) was about creating POC hacks, t
 I spend (waaaaayyy) too much time in my local Fablab, love making my own drones and use **3D printers**, **CNCs** and **laser-cut** devices for fun or sometimes real stuff ^^. 
 Last but not least, I enjoy contributing on **Java** / **IoT** / **training** OpenSource projects and hacking IoT devices. In 2014, we launched a small organization called Resourcepool (https://resourcepool.io) to help create Training content for universities, students, and entry-level devs.
 
-![Remote Control App for my custom LED Controller](images/ledcontroller-remote-app-sm.jpg)
-![Custom-made PCB v1 and v2 for my custom LED Controller](images/ledcontroller-pcb-sm.jpg)
+<div class="markdown-flex-container">
+    <img src="images/ledcontroller-remote-app-sm.jpg" alt="Remote Control App for my custom LED Controller"/>
+    <img src="images/ledcontroller-pcb-sm.jpg" alt="Custom-made PCB v1 and v2 for my custom LED Controller"/>
+    <img src="images/iron-man.jpg" alt="Custom LEDs and controller to remote-control my Iron-Man backlight"/>  
+</div>
+
 
 Most of my current OpenSource contributions are detailed in the Projects page.
 

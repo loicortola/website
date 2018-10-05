@@ -1,9 +1,25 @@
 [
   {
+    "id": 7,
+    "title": "Blindtest Live App",
+    "description": "On the side, I love playing live music. Together with some friends, we came up with a cool concept: Live Blindtests!\r\nIt was easy and fun to guess when you had 20 people playing... Not the same when your audience has 500 people. So we built an app to answer live, play jokers and provide people with an incredible gameplay while they will also cry out loud their favorite songs with us!\r\n\r\n![Blind Test Live helper app](images/blindtest-live-1.jpg)![Blind Test Live leaderboard](images/blindtest-live-2.jpg)\r\n\r\nWant to get crazy with us? Look us up on Facebook and join us in our many concerts in and around Paris!\r\n\r\n",
+    "website": "https://www.blindtest.live",
+    "skills": ["Java", "Spring Web Flux", "Netty", "Firebase", "Angular 6", "DevOps", "Ansible", "Websockets", "Webpack", "SASS"],
+    "logo": "tbh-logo.png"
+  },
+  {
+    "id": 6,
+    "title": "This Website",
+    "description": "This website is a great template to start with, using React.js, Redux, Webpack 4, SASS, CSS-Modules, and of course some cool Material design features.\r\n\r\nCheck out its source code on [Github](https://github.com/loicortola/website)\r\n",
+    "website": "https://www.github.com/loicortola/website",
+    "skills": ["React.js", "Redux", "SASS", "Webpack", "Travis CI", "Docker"],
+    "logo": "profile-default.png"
+  },
+  {
     "id": 5,
     "title": "Deadlock",
-    "description": "This is my biggest project right now.  **Deadlock** will be the first OpenSource **coding & hacking game** platform.  Our goal? Simply reinvent the way people learn computer-science, and the way we get our new recruits.  \r\nThe project is a year-long project and should be OpenSourced before the end of year 2018.  \r\n\r\n![Deadlock player dashboard](images/deadlock-1.jpg)![Deadlock story hall](images/deadlock-2.jpg)  \r\n\r\nWant to take part in the project? **Message me**!",
-    "website": "https://github.com/resourcepool",
+    "description": "This is my biggest project right now.  **Deadlock** will be the first OpenSource **coding & hacking game** platform.  Our goal? Simply reinvent the way people learn computer-science, and the way we get our new recruits.  \r\nThe project is a year-long project and should be OpenSourced before the end of year 2018.  \r\n\r\n![Deadlock player dashboard](images/deadlock-1.jpg)![Deadlock story hall](images/deadlock-2.jpg)  \r\n\r\nWant to take part in the project? **Message me**!  Want to try it out? **go ahead**, it's live!",
+    "website": "https://www.deadlock.io",
     "skills": ["Java", "JavaFX", "Spring Boot", "Docker", "Orchestration", "DevOps", "Ansible", "React.js", "Redux", "Webpack", "SASS"],
     "logo": "deadlock-logo.png"
   },
