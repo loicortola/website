@@ -48,7 +48,7 @@ class ActionMenu extends Component {
         id={styles.actionMenu}
         className={this.props.shrink ? styles.shrink : styles.expand}
       >
-        <a href={this.getLink('github')} target="_blank" id="open_github" />
+        <a href={this.getLink('github')} target="_blank" rel='noreferrer noopener' id="open_github" />
         <Button
           variant="fab"
           mini
@@ -58,7 +58,7 @@ class ActionMenu extends Component {
         >
           <GithubIcon />
         </Button>
-        <a href={this.getLink('twitter')} target="_blank" id="open_twitter" />
+        <a href={this.getLink('twitter')} target="_blank" rel='noreferrer noopener' id="open_twitter" />
         <Button
           variant="fab"
           mini
@@ -68,7 +68,7 @@ class ActionMenu extends Component {
         >
           <TwitterIcon />
         </Button>
-        <a href={this.getLink('linkedin')} target="_blank" id="open_linkedin" />
+        <a href={this.getLink('linkedin')} target="_blank" rel='noreferrer noopener' id="open_linkedin" />
         <Button
           variant="fab"
           mini
@@ -81,6 +81,7 @@ class ActionMenu extends Component {
         <a
           href={this.getLink('instagram')}
           target="_blank"
+          rel='noreferrer noopener'
           id="open_instagram"
         />
         <Button

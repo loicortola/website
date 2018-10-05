@@ -35,6 +35,7 @@ class Instagram extends Component {
         <a
           href={this.props.data.url}
           target="_blank"
+          rel='noreferrer noopener'
           id={'instaLink' + this.props.id}
           style={{ visibility: 'hidden' }}
         >

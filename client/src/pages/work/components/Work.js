@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl } from 'react-intl';
 import Skill from '../../../partials/skill/Skill';
-import Card, { CardContent } from '@material-ui/core/Card';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 import WorkXPHeader from '../components/WorkXPHeader';
 import WorkXPDescription from '../components/WorkXPDescription';
 import Avatar from '@material-ui/core/Avatar';
@@ -89,4 +89,4 @@ Work.propTypes = {
   experience: PropTypes.object.isRequired
 };
 
-export default injectIntl(Work);
+export default Work;
