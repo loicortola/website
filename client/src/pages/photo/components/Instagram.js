@@ -42,13 +42,13 @@ class Instagram extends Component {
         </a>
         <div className={styles.imageContainer}>
           <span className={styles.helper} />
-          <img src={this.props.data.urlImage} alt="instagram shot" />
+          <img src={this.props.data.imgUrl} srcSet={this.props.data.imgsetUrls} alt="instagram shot" />
         </div>
         <div className={styles.overlay}>
           <div className={styles.likeContainer}>
             <span className={styles.helper} />
             <LikeIcon className={styles.likeIcon} />
-            <div className={styles.likeValue}>{this.props.data.numberLike}</div>
+            <div className={styles.likeValue}>{this.props.data.likeCount}</div>
           </div>
           <div className={styles.description}>{this.renderDescription()}</div>
         </div>

@@ -10,6 +10,7 @@ services:
 install:
 - npm install
 script:
+- cd client
 - npm test
 - npm run-script build
 - docker build -t loicortola/website:${TRAVIS_BUILD_NUMBER} -t loicortola/website:latest .

@@ -11,7 +11,8 @@ services:
     networks:
       - bridged
     volumes:
-      - ../:/usr/src/app
+      - ../client/:/usr/src/app
+      - assets/:/usr/src/app/static/assets
     ports:
       - "3000:3000"
     logging:

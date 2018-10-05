@@ -7,6 +7,7 @@ const port = process.env.PORT || 3000;
 
 const distPath = path.join(__dirname, 'dist');
 const confPath = path.join(__dirname, 'conf');
+const assetsPath = path.join(__dirname, '../dev/assets');
 
 module.exports = (params) => {
   return merge(common(params), {
@@ -20,6 +21,9 @@ module.exports = (params) => {
       new CopyWebpackPlugin([{
         from: path.resolve(path.join(confPath, 'conf.js')),
         to: path.resolve(path.join(distPath, 'conf'))
+      }, { 
+        from: path.resolve(path.join(assetsPath)),
+        to: path.resolve(path.join(distPath, 'assets'))
       }])
     ]
   });
