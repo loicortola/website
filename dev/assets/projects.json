@@ -1,5 +1,13 @@
 [
   {
+    "id": 8,
+    "title": "Takahoot",
+    "description": "You know Kahoot right? [Kahoot](https://www.kahoot.com) is a great Quizz platform mostly used for educational purposes!\r\n\r\nFor Takima, we wanted to have a **better** and **cooler** controller than just a normal phone... So we made [TaKahoot](https://github.com/resourcepool/takahoot).\r\n\r\nTakahoot is a physical target for Kahoot that behaves as a normal player and allows to be trigged by a nice shot from your favorite Nerf gun.\r\n\r\n![Takahoot Box](images/takahoot-box.jpg)![Takahoot Triggers before mount](images/takahoot-triggers.jpg)\r\n\r\nWe made everything from scratch, from the **3D STL models**, printed some parts with a 3D Printer, cut some others with a laser-cutting device, implemented the controller with a simple Serial protocol with Arduino and of course a great user-friendly client in Electron & Angular.",
+    "website": "https://github.com/resourcepool/takahoot",
+    "skills": ["Electron", "Angular", "Websockets", "Solidworks", "Maker"],
+    "logo": "tbh-logo.png"
+  },
+  {
     "id": 7,
     "title": "Blindtest Live App",
     "description": "On the side, I love playing live music. Together with some friends, we came up with a cool concept: **Live Blindtests**!\r\n\r\nIt was easy and fun to guess when you had 20 people playing... Not the same with 500.\r\n\r\nSo we built an app to answer live, play jokers and provide people with an incredible gameplay while they will also cry out loud their favorite songs!\r\n\r\n![Blind Test Live helper app](images/blindtest-live-1.jpg)![Blind Test Live leaderboard](images/blindtest-live-2.jpg)\r\n\r\nWanna get crazy? Look us up on Facebook and join us in our many concerts in and around Paris! The name is **[The Bold Heads](https://www.facebook.com/TheBoldHeads)**\r\n\r\n",
