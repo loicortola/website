@@ -1,0 +1,11 @@
+# Allowlist: only what the build needs is sent to Docker. Anything else in the
+# folder (env files, personal documents, git history, build output) stays out.
+*
+!package.json
+!package-lock.json
+!next.config.ts
+!tsconfig.json
+!postcss.config.mjs
+!components.json
+!src/
+!public/

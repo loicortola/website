@@ -1,0 +1,182 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Map palette: sage paper, slate ink, water blue, road ochre. */
+:root {
+  --background: #edf0ea;
+  --foreground: #18262f;
+  --card: #f5f7f3;
+  --card-foreground: #18262f;
+  --popover: #f5f7f3;
+  --popover-foreground: #18262f;
+  --primary: #18262f;
+  --primary-foreground: #edf0ea;
+  --secondary: #dde4d8;
+  --secondary-foreground: #18262f;
+  --muted: #e2e8de;
+  --muted-foreground: #4d5d66;
+  --accent: #dde4d8;
+  --accent-foreground: #18262f;
+  --destructive: #b3261e;
+  --border: #cdd5c8;
+  --input: #c2ccbd;
+  --ring: #2b5b87;
+  --radius: 0.625rem;
+
+  --contour: #aebba6;
+  --water: #2b5b87;
+  --road: #d9a21b;
+  /* Stroke colour of the hero map, applied through a mask. */
+  --map-ink: #4d5d66;
+}
+
+.dark {
+  --background: #0f1b22;
+  --foreground: #e2e8e1;
+  --card: #15242c;
+  --card-foreground: #e2e8e1;
+  --popover: #15242c;
+  --popover-foreground: #e2e8e1;
+  --primary: #e2e8e1;
+  --primary-foreground: #0f1b22;
+  --secondary: #1d2f37;
+  --secondary-foreground: #e2e8e1;
+  --muted: #1a2b33;
+  --muted-foreground: #97a7ab;
+  --accent: #1d2f37;
+  --accent-foreground: #e2e8e1;
+  --destructive: #f2867d;
+  --border: #253840;
+  --input: #2d434c;
+  --ring: #86b6e0;
+
+  --contour: #30464c;
+  --water: #86b6e0;
+  --road: #e6b43a;
+  --map-ink: #7d9197;
+}
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --color-contour: var(--contour);
+  --color-water: var(--water);
+  --color-road: var(--road);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply bg-background font-sans;
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  ::selection {
+    background: var(--road);
+    color: #18262f;
+  }
+}
+
+/* Wide Archivo for page titles: the one loud typographic gesture. */
+.type-display {
+  font-family: var(--font-heading);
+  font-stretch: 125%;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.prose-map p + p,
+.prose-map p + ul,
+.prose-map ul + p {
+  margin-top: 1em;
+}
+.prose-map a {
+  color: var(--water);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-map strong {
+  font-weight: 600;
+  color: var(--foreground);
+}
+.prose-map ul {
+  display: grid;
+  gap: 0.5em;
+  list-style: disc;
+  padding-left: 1.25em;
+}
+
+/* Hero map: /topo.svg is used as a mask so its strokes follow the theme. */
+.topo-mask {
+  background-color: var(--map-ink);
+  mask: url("/topo.svg") center / cover no-repeat;
+}
+
+/* The hero pin drops in once the contours have drawn. */
+.pin-reveal {
+  opacity: 0;
+  animation: pin 600ms ease-out 1.5s forwards;
+}
+@keyframes pin {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pin-reveal {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+.prose-map code {
+  border-radius: calc(var(--radius) * 0.6);
+  background: var(--muted);
+  padding: 0.1em 0.35em;
+  font-size: 0.9em;
+}
