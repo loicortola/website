@@ -13,6 +13,32 @@ export type Project = {
 
 export const featured: Project[] = [
   {
+    slug: "rxsampler",
+    title: "RXSampler",
+    summary: "A pad sampler for iPhone and Android: load a bank, tap the pads, play your set.",
+    body: "**RXSampler** turns a phone into a pad sampler in the spirit of the AKAI MPX8. Pads fire the instant your finger lands, hits stack on top of each other, and a playing pad's outline drains clockwise with the time left on the sample, readable from a metre away.\n\nIt's built for a live set: banks of 2 to 16 pads, eight settings per pad (gain, loop, touch behaviour, choke, fade-out...), a stage lock so only the pads respond, and playback that keeps going with the screen off. Import WAV, MP3, AAC, OGG or FLAC, and share whole banks as a single ZIP. Free, with no account, no ads and no network access, installed straight from the site.",
+    website: "https://rxsampler.com",
+    cover: "/images/rxsampler-cover.jpg",
+    stack: ["iOS", "Android", "Audio"],
+    images: [
+      { src: "/images/rxsampler-portrait.jpg", alt: "An eight-pad live set, with two pads playing" },
+      { src: "/images/rxsampler-landscape.jpg", alt: "Landscape layout: four columns, master fader on the left" },
+    ],
+  },
+  {
+    slug: "fastloader",
+    title: "FastLoader",
+    summary: "Send heavy files with one simple link, protected if needed and deleted when it expires.",
+    body: "**FastLoader** is a file transfer service in the spirit of WeTransfer, hosted in France. Drop your files, give them a title and a note, and share the link. Each transfer can be locked with a password, capped at a number of downloads, and set to expire: files are deleted automatically soon after.\n\nNo account is needed to send a transfer that lasts up to three days. With an account, you keep track of your transfers, change their settings, and create API keys to send files from your own tools. No ads, no third-party analytics, no tracking: files are only stored to be delivered to the people who have the link.",
+    website: "https://fastloader.eu",
+    cover: "/images/fastloader-cover.jpg",
+    stack: ["Next.js", "React", "Firebase Auth", "OVHcloud"],
+    images: [
+      { src: "/images/fastloader-home.jpg", alt: "The FastLoader home page, with the upload form next to the headline" },
+      { src: "/images/fastloader-mobile.jpg", alt: "The upload form on a phone: password, expiry and download limit" },
+    ],
+  },
+  {
     slug: "decoupano",
     title: "DécouPano",
     summary: "Free online cutting plans for wood panels, from your first cabinet to a whole kitchen.",
