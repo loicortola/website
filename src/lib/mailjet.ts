@@ -49,9 +49,14 @@ export async function sendContactEmail(msg: ContactMessage) {
     signal: AbortSignal.timeout(10_000),
   });
 
-  const body = (await res.json().catch(() => null)) as { Messages?: { Status: string; Errors?: unknown[] }[] } | null;
-  const status = body?.Messages?.[0]?.Status;
-  if (!res.ok || status !== "success") {
-    throw new Error(`Mailjet send failed (HTTP ${res.status}): ${JSON.stringify(body?.Messages?.[0]?.Errors ?? body)}`);
+  const body = (await res.json().catch(() => null)) as {
+    Messages?: { Status: string; Errors?: unknown[]; To?: { MessageUUID: string; MessageID: number }[] }[];
+  } | null;
+  const result = body?.Messages?.[0];
+  if (!res.ok || result?.Status !== "success") {
+    throw new Error(`Mailjet send failed (HTTP ${res.status}): ${JSON.stringify(result?.Errors ?? body)}`);
   }
+  // Only Mailjet's ids, no visitor data: enough to find the message in Mailjet's logs.
+  const sent = result.To?.[0];
+  console.info(`[contact] accepted by Mailjet, MessageID=${sent?.MessageID} MessageUUID=${sent?.MessageUUID}`);
 }
