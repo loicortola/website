@@ -46,7 +46,7 @@ export default function ProjectsPage() {
               </CardFooter>
             </div>
             {p.images && (
-              <div className="grid grid-cols-2 items-center gap-3 px-4 lg:w-[44%] lg:bg-muted/50 lg:p-6">
+              <div className={`grid ${p.images.length > 1 ? "grid-cols-2" : "grid-cols-1"} items-center gap-3 px-4 lg:w-[44%] lg:bg-muted/50 lg:p-6`}>
                 {p.images.map((img) => (
                   <figure key={img.src}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}

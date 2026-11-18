@@ -13,6 +13,41 @@ export type Project = {
 
 export const featured: Project[] = [
   {
+    slug: "lika",
+    title: "Lika",
+    summary: "An open-source deeplink platform: short links on as many domains as you own, managed by your team, your apps and your AI assistant.",
+    body: "**Lika** is a multi-domain deeplink and permalink manager. Point any number of domains at it, and each one serves its own short links: a readable or random slug that redirects to a target URL. A link can be scheduled to go live at a given time (with a fallback target until then), set to expire, locked behind a password, and labelled with free metadata to find it again.\n\nPeople are invited per domain as viewer, editor or manager, so each team only sees its own links. Applications create and read links through a REST API with scoped API keys, and an MCP server lets an AI assistant do the same in plain language. Everything can be exported as a single archive. Open source, under AGPL-3.0.",
+    website: "https://lika.li",
+    cover: "/images/lika-cover.jpg",
+    stack: ["Next.js", "React", "Spring Boot", "REST API", "MCP"],
+    images: [
+      { src: "/images/lika-new-link.jpg", alt: "Creating a link in Lika: domain, slug, password, scheduled activation, expiry and metadata" },
+      { src: "/images/lika-api.jpg", alt: "The Lika REST API, documented with OpenAPI" },
+    ],
+  },
+  {
+    slug: "local-cert",
+    title: "local-cert",
+    summary: "The end of non-verified TLS certificates in your LAN: a private ACME registry and certificate manager for local services.",
+    body: "**local-cert** is both a private ACME registry and a certificate manager. It closes the gap between DNS-01 ACME challenges and API-driven TLS certificate generation for services that never face the internet: it creates the subdomain records, answers the challenge, and hands back a certificate every browser trusts.\n\nI use it to generate valid TLS certificates and subdomain records for the platforms that live in my LAN. ACME clients such as nginx or Dokploy register with their own EAB credentials and renew on their own, while applications call the API with keys scoped to a domain and to precise rights: read, issue, renew or export a certificate, write DNS records. One console lists certificates, domains, keys and rights.",
+    cover: "/images/local-cert-cover.jpg",
+    stack: ["ACME", "DNS-01", "TLS", "PostgreSQL"],
+    images: [
+      { src: "/images/local-cert-keys.jpg", alt: "The local-cert console: API keys scoped by domain and rights, and EAB credentials for ACME clients" },
+    ],
+  },
+  {
+    slug: "aiconmigo",
+    title: "Aiconmigo",
+    summary: "An MCP gateway to my in-house services: one secure runtime for a set of atomically small connectors.",
+    body: "**Aiconmigo** is an MCP gateway to specific services developed in-house. It started as a way to automate the generation of smart lock PIN codes for my Airbnb guests, and has become the secure platform runtime that runs all my atomically small MCP connectors.\n\nEach connector does one thing: manage the keypad PIN codes of EZVIZ locks, or of Matter locks through Home Assistant, read and send messages from a WhatsApp Business number, read items in a 1Password vault. An enabled connector runs in its own sandboxed process, a disabled one runs no code at all, and read or write access is granted per application and per resource, down to a single lock or vault.",
+    cover: "/images/aiconmigo-cover.jpg",
+    stack: ["MCP", "Home Assistant", "WhatsApp Business", "1Password"],
+    images: [
+      { src: "/images/aiconmigo-connectors.jpg", alt: "The Aiconmigo connectors page: WhatsApp Business, 1Password, EZVIZ locks and Home Assistant locks" },
+    ],
+  },
+  {
     slug: "rxsampler",
     title: "RXSampler",
     summary: "A pad sampler for iPhone and Android: load a bank, tap the pads, play your set.",
