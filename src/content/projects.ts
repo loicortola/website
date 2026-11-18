@@ -48,6 +48,17 @@ export const featured: Project[] = [
     ],
   },
   {
+    slug: "home-guide",
+    title: "home-guide",
+    summary: "A digital, multilingual house guide for the Airbnb guests and friends who stay in my home.",
+    body: "**home-guide** replaces the printed welcome booklet with a digital, multilingual, user-friendly and dynamic app, for Airbnb guests or friends who sometimes stay in my home. It walks them through the whole stay: getting here, sleeping, cooking, heating, lights and shutters, what to do before leaving, and a map of the restaurants and shops worth knowing nearby.\n\nAnyone can read the general guide. The parts that matter only to a guest, such as how to get in, the Wi-Fi or who to call, stay locked until they enter the stay code their hosts sent them, and then show the details of their own stay.",
+    cover: "/images/home-guide-cover.jpg",
+    stack: ["MapLibre", "Jawg Maps", "OpenStreetMap"],
+    images: [
+      { src: "/images/home-guide-guide.jpg", alt: "The guide: a stay code form, the list of sections with guest-only ones locked, and the map of nearby places" },
+    ],
+  },
+  {
     slug: "rxsampler",
     title: "RXSampler",
     summary: "A pad sampler for iPhone and Android: load a bank, tap the pads, play your set.",
